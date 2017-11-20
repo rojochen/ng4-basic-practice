@@ -1,3 +1,29 @@
 <p>
-  component-demo-1 works!
+  hello {{name}}
+</p>
+<p>
+  <!-- "The sum of 1 + 1 is 2" -->
+   The sum of 1 + 1 is {{1 + 1}}
+</p>
+<p>
+  <!-- "The sum of 1 + 1 is 2" -->
+   The sum of 1 + 1 is {{ getVal()}}
+</p>
+<p> 
+  <!-- binding src value -->
+   <img src="{{imgUrl}}" style="height:30px">
+</p>
+<p>
+    <!--# 表示宣告的heroInput變數給dom使用 -->
+    <input #heroInput (keyup)="keyup(heroInput.value)"> {{values}} <br>   
+    <!--event binding-->
+    <button (click)="say()">(click event)</button>
+    <button on-click="say()">on-click</button> <br>
+    <input type="text" on-keydown="keydown()">
+    <!--template reference variable -->
+    <input #phone placeholder="phone number">
+    <button (click)="call(phone.value)">Call</button>
+     <!-- anti parttern 
+    <span>{{init()}}</span> -->
+    
 </p>
