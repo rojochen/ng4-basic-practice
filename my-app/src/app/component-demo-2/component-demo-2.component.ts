@@ -25,6 +25,9 @@ export class ComponentDemo2Component implements OnInit {
   changeDisable(): void {
     this.disabledValue = !this.disabledValue;
   }
+  consoleEvent(event: Event): void {
+    console.log(event);
+  }
   ngOnInit() {
   }
 

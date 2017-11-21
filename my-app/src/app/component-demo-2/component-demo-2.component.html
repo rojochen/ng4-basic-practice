@@ -7,3 +7,7 @@
   <button on-click="appendPlaceholder()" >append placeholder</button>  
   <button (click)="changeReadonly()" >readonly</button>
 </p>
+<p>
+  <!--不太建議的寫法,例用事件操作dom元素。-->
+  <button on-click="consoleEvent($event)">Console event</button>
+</p>
