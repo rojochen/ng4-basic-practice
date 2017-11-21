@@ -1,0 +1,26 @@
+<hr>
+<h1>directive template</h1>
+
+<h2 id="expression-context">Expression context</h2>
+<div class="content">
+  <p>Component expression context (&#123;&#123;title&#125;&#125;, [hidden]="isUnchanged")</p>
+  <p>isUnchanged: {{ isUnchanged }}</p>
+  <div>
+    {{title}}
+    <span [hidden]="isUnchanged">changed</span>
+  </div>
+
+  <p>Bind button disabled state to `isUnchanged` property</p>
+  <button [disabled]="isUnchanged">Button is disabled</button>
+
+  <p>Bind img src to property</p>
+  <img [src]="imgUrl" alt="Angular icon" width="30" height="30">
+</div>
+
+<div class="content">
+  <p>Template input variable expression context (let Member)</p>
+  <div *ngFor="let member of getMember()">
+    <span>ID: {{member.id}}</span>
+    <span>Name: {{ member.name}}</span>
+  </div>
+</div>
