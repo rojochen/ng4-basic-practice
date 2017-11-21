@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "dev": "ng serve --aot -o",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -47,3 +47,4 @@
     "typescript": "~2.3.3"
   }
 }
+
