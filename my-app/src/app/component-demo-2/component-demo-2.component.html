@@ -1,3 +1,9 @@
 <p>
-  component-demo-2 works!
+  <button [disabled]="disabledValue">Property binding</button>
+  <button (click)="changeDisable()">Disabled</button>
+</p>
+<p>
+  <input  type="text" name="" id="myText"  placeholder="{{textPlaceholder}}" [readonly]="textReadonly">
+  <button on-click="appendPlaceholder()" >append placeholder</button>  
+  <button (click)="changeReadonly()" >readonly</button>
 </p>

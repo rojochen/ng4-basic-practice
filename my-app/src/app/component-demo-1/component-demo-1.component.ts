@@ -8,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ComponentDemo1Component implements OnInit {
   name: string;
   values: string;
+  imgUrl: string;
   constructor() {
     this.name = 'roger';
     this.values = '';
+    // tslint:disable-next-line:max-line-length
+    this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
   }
   init(): void {
     console.log('hello');

@@ -6,9 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component-demo-2.component.css']
 })
 export class ComponentDemo2Component implements OnInit {
-
-  constructor() { }
-
+  disabledValue: boolean;
+  textPlaceholder: string;
+  textReadonly: boolean;
+  constructor() {
+    this.disabledValue = false;
+    this.textPlaceholder = '';
+  }
+  isDisalbed(): boolean {
+    return this.disabledValue;
+  }
+  changeReadonly(): void {
+    this.textReadonly = true;
+  }
+  appendPlaceholder(): void {
+    this.textPlaceholder = 'input phone number';
+  }
+  changeDisable(): void {
+    this.disabledValue = !this.disabledValue;
+  }
   ngOnInit() {
   }
 
