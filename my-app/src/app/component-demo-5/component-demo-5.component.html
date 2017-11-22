@@ -3,6 +3,10 @@
 
 <h2 id="expression-context">Expression context</h2>
 <div class="content">
+  <p>"
+    <span [innerHTML]="evilTitle"></span>" is the
+    <i>property bound</i> evil title.</p>
+  <br>
   <p>Component expression context (&#123;&#123;title&#125;&#125;, [hidden]="isUnchanged")</p>
   <p>isUnchanged: {{ isUnchanged }}</p>
   <div>
@@ -12,14 +16,68 @@
 
   <p>Bind button disabled state to `isUnchanged` property</p>
   <button [disabled]="isUnchanged">Button is disabled</button>
-
+  <button bind-disabled="isUnchanged">Disabled Cancel</button>
+  
+  <hr>
   <p>Bind img src to property</p>
-  <img [src]="imgUrl" alt="Angular icon" width="30" height="30">
+  <img [src]="imgUrl" alt="Angular icon" width="30" height="30" />
+  <img bind-src="imgUrl" alt="Angular icon" width="30" height="30" />
+  
+  <hr>
+  <p>Bind class or style to property</p>
+  <div [class.special]="isSpecial">Special</div>
+  <button [style.color]="isSpecial ? 'red' : 'green'">button</button>
+  <button [style.background-color]="canSave ? 'cyan': 'grey'" >Save</button>
+  <button [style.font-size.em]="isSpecial ? 3 : 1" >Big</button>
+  <button [style.font-size.%]="!isSpecial ? 150 : 50" >Small</button>
+  <hr>
+  
+  
 </div>
-
 <div class="content">
-  <p>Template input variable expression context (let Member)</p>
+    <p>Attribute Binding</p>
+    <table border=1>
+      <tr>
+        <td [attr.colspan]="1 + 1">One-Two</td>
+      </tr>
+      <tr>
+        <td>Five</td>
+        <td>Six</td>
+      </tr>
+    </table>
+    <button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+    <img [attr.src]="imgUrl" alt="Angular icon" width="30" height="30" />
+    <button [attr.disabled]="isUnchanged">Disabled</button>
+</div>
+<div class="content">
+    <p>ngClass</p>
+    <div [ngClass]="{bordered: false}">This is never bordered</div>
+    <div [ngClass]="{bordered: true}">This is always bordered</div>
+</div>
+<div class="content">
+  <p>ngStyle</p>
+  <div [ngStyle]="{color: 'white', 'background-color': 'blue'}">Uses fixed white text on blue background</div>
+</div>
+<div class="content">
+  <p>*ngIf</p>
+  <p>ngIf = myFunc()</p>
+</div>
+<div class="content">
+  <p>*ngFor</p>
   <div *ngFor="let member of getMember()">
+    <span>ID: {{member.id}}</span>
+    <span>Name: {{ member.name}}</span>
+  </div>
+  <hr>
+  <p>*ngFor track by index</p>
+  <div *ngFor="let member of getMember();trackBy: trackByIndex;let i = index">
+    <span>Idx: {{ i }}</span>
+    <span>ID: {{member.id}}</span>
+    <span>Name: {{ member.name}}</span>
+  </div>
+
+  <p>*ngFor track by Member ID</p>
+  <div *ngFor="let member of getMember();trackBy: trackByMemberId;">
     <span>ID: {{member.id}}</span>
     <span>Name: {{ member.name}}</span>
   </div>
