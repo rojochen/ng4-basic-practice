@@ -6,7 +6,12 @@ import { ComponentDemo1Component } from './component-demo-1/component-demo-1.com
 import { ComponentDemo2Component } from './component-demo-2/component-demo-2.component';
 import { ComponentDemo3Component } from './component-demo-3/component-demo-3.component';
 import { ComponentDemo5Component } from './component-demo-5/component-demo-5.component';
+<<<<<<< HEAD
 import { ComponentDemo4Component } from './component-demo-4/component-demo-4.component';
+=======
+import { HighlightDirective } from './highlight.directive';
+import { Highlight2Directive } from './highlight2.directive';
+>>>>>>> 12397a632e45bc3d792b1bcdc5c3b08a1953348f
 
 @NgModule({
   declarations: [
@@ -15,7 +20,12 @@ import { ComponentDemo4Component } from './component-demo-4/component-demo-4.com
     ComponentDemo2Component,
     ComponentDemo3Component,
     ComponentDemo5Component,
+<<<<<<< HEAD
     ComponentDemo4Component,
+=======
+    HighlightDirective,
+    Highlight2Directive,
+>>>>>>> 12397a632e45bc3d792b1bcdc5c3b08a1953348f
   ],
   imports: [
     BrowserModule, FormsModule
