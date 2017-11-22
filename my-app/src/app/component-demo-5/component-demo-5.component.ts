@@ -14,6 +14,11 @@ export class ComponentDemo5Component implements OnInit {
   evilTitle: string;
   actionName: string;
   canSave: boolean;
+  bigNum: number;
+  smallNum: number;
+  isString: string;
+  myVar: string;
+  color: string;
   constructor() {
     this.title = 'Template Syntax';
     this.isUnchanged = true;
@@ -22,13 +27,17 @@ export class ComponentDemo5Component implements OnInit {
     this.evilTitle = 'Hello Angular.';
     this.actionName = 'Go for it.';
     this.canSave = false;
+    this.bigNum = 10;
+    this.smallNum = 5;
+    this.isString = 'str';
+    this.myVar = 'A';
   }
 
   ngOnInit() {
   }
   getMember() {
     return [{
-      id: 3,
+      id: 1,
       name: 'Roger'
     }, {
       id: 2,
@@ -40,5 +49,9 @@ export class ComponentDemo5Component implements OnInit {
   }
   trackByMemberId(index, item) {
     return item.id;
-  } 
+  }
+
+  validationFun() {
+    return true;
+  }
 }
