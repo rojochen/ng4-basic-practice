@@ -1,3 +1,7 @@
 <p>
-  component-demo-4 works!
+  <input [(ngModel)]="name" #ctrl="ngModel" required>    
+  <span>Value: {{ name }}</span>
+  <span>Valid: {{ ctrl.valid }}</span>
+  <button (click)="setValue()">Set value</button>
 </p>
+{{ctrl.value}}
