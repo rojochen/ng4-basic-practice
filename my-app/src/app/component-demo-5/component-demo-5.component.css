@@ -3,3 +3,14 @@
     border: 1px solid #ddd;
     padding: 5px;
 }
+
+.special{
+    border: 1px dashed #ccc;
+    background-color: #fa0;
+    color: #fff;
+}
+
+.bordered{
+    border: 1px solid;
+    padding: 2px;
+}
