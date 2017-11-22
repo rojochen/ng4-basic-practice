@@ -54,4 +54,7 @@ export class ComponentDemo5Component implements OnInit {
   validationFun() {
     return true;
   }
+  selectChange(e) {
+    console.log('e: ', e);
+  }
 }

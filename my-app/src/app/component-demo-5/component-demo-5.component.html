@@ -90,6 +90,11 @@
     <span>ID: {{member.id}}</span>
     <span>Name: {{ member.name}}</span>
   </div>
+
+  <p>select use *ngFor</p>
+  <select (change)="selectChange($event)">
+    <option *ngFor="let member of getMember();trackBy: trackByIndex;" [value]="member.id" [innerHTML]="member.name"></option>
+  </select>
 </div>
 
 <div class="content">
