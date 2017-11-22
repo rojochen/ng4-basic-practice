@@ -6,6 +6,7 @@ import { ComponentDemo1Component } from './component-demo-1/component-demo-1.com
 import { ComponentDemo2Component } from './component-demo-2/component-demo-2.component';
 import { ComponentDemo3Component } from './component-demo-3/component-demo-3.component';
 import { ComponentDemo5Component } from './component-demo-5/component-demo-5.component';
+import { ComponentDemo4Component } from './component-demo-4/component-demo-4.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ComponentDemo5Component } from './component-demo-5/component-demo-5.com
     ComponentDemo2Component,
     ComponentDemo3Component,
     ComponentDemo5Component,
+    ComponentDemo4Component,
   ],
   imports: [
     BrowserModule, FormsModule
