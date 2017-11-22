@@ -10,6 +10,9 @@ export class ComponentDemo3Component implements OnInit {
   oneWayValue: string ;
   selectValue: string ;
   twoWayValue: string ;
+  twoWayValue1: string ;
+  radioValue: string;
+  boxValue1: string;
   boxList: Array<{ selected: boolean; value: string }>;
   constructor() {
     this.oneWayValue = '';
