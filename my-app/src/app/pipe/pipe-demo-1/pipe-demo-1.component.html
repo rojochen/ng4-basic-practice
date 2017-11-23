@@ -14,9 +14,9 @@
   {{value }} <br/>
   {{value | lastnameUppercase}}
 </div>
-<div class="panel-body">
+<div>
     <input type="number" name="" [(ngModel)]="searchNum">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor=" let list of (numberList | filterNumber: searchNum)">{{list}}</li>
+    <ul>
+      <li *ngFor=" let list of (numberList | filterNumber: searchNum)">{{list}}</li>
     </ul>
   </div>
