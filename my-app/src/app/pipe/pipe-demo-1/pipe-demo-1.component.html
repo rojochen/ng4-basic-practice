@@ -1,0 +1,22 @@
+<p>
+  built-in pipe works!
+</p>
+<!-- more :https://angular.io/api/common/DatePipe-->
+<p>TODAY : {{today | date:'yyyy年MM月dd HH:mm a z':'+0900'}}</p>
+
+<p>A: {{a | percent}}</p>
+<!-- JSON.stringify -->
+<p>{{object | json}}</p>
+
+<p>{{value | uppercase | slice:0:5}}</p>
+<!--原始的value不受影響 -->
+<div>
+  {{value }} <br/>
+  {{value | lastnameUppercase}}
+</div>
+<div>
+    <input type="number" name="" [(ngModel)]="searchNum">
+    <ul>
+      <li *ngFor=" let list of (numberList | filterNumber: searchNum)">{{list}}</li>
+    </ul>
+  </div>

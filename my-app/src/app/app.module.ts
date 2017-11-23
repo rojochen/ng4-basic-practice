@@ -13,6 +13,9 @@ import { DelayDirective } from './directive/delay.directive';
 import { DirectiveDemo1Component } from './directive/directive-demo-1/directive-demo-1.component';
 import { DirectiveDemo2Component } from './directive/directive-demo-2/directive-demo-2.component';
 import { DirectiveDemo3Component } from './directive/directive-demo-3/directive-demo-3.component';
+import { LastnameUppercasePipe } from './pipe/lastname-uppercase.pipe';
+import { PipeDemo1Component } from './pipe/pipe-demo-1/pipe-demo-1.component';
+import { FilterNumberPipe } from './pipe/filter-name.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { DirectiveDemo3Component } from './directive/directive-demo-3/directive-
     DelayDirective,
     DirectiveDemo1Component,
     DirectiveDemo2Component,
-    DirectiveDemo3Component
+    DirectiveDemo3Component,
+    LastnameUppercasePipe,
+    PipeDemo1Component,
+    FilterNumberPipe
   ],
   imports: [
     BrowserModule, FormsModule
