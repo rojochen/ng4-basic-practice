@@ -8,4 +8,15 @@
 <!-- JSON.stringify -->
 <p>{{object | json}}</p>
 
-{{value | uppercase}}
+<p>{{value | uppercase | slice:0:5}}</p>
+<!--原始的value不受影響 -->
+<div>
+  {{value }} <br/>
+  {{value | lastnameUppercase}}
+</div>
+<div class="panel-body">
+    <input type="number" name="" [(ngModel)]="searchNum">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor=" let list of (numberList | filterNumber: searchNum)">{{list}}</li>
+    </ul>
+  </div>

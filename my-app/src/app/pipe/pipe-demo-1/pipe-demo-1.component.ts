@@ -10,11 +10,16 @@ export class PipeDemo1Component implements OnInit {
   a: number ;
   value: string;
   object: Object = {foo: 'bar', baz: 'qux', nested: {xyz: 3, numbers: [1, 2, 3, 4, 5]}};
+  numberList: Array<number> = [];
+  searchNum: Number;
   constructor() {
     this.a = 0.259;
     this.value = 'hello world';
   }
   ngOnInit() {
+    for (let index = 1; index <= 10; index++) {
+      this.numberList.push(index);
+    }
   }
 
 }
