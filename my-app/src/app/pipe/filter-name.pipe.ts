@@ -6,7 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterNamePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return null;
+    if (!args) {
+      return value;
+    } else {
+      return value.filter(list => {
+          return args === list;
+      });
+    }
   }
 
 }
