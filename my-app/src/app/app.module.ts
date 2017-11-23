@@ -11,6 +11,8 @@ import { HighlightDirective } from './highlight.directive';
 import { Highlight2Directive } from './highlight2.directive';
 import { ComponentDemo6Component } from './component-demo-6/component-demo-6.component';
 import { AppCollarDirective } from './app-collar.directive';
+import { ComponentDemo7Component } from './component-demo-7/component-demo-7.component';
+import { DelayDirective } from './delay.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AppCollarDirective } from './app-collar.directive';
     HighlightDirective,
     Highlight2Directive,
     ComponentDemo6Component,
-    AppCollarDirective
+    AppCollarDirective,
+    ComponentDemo7Component,
+    DelayDirective
   ],
   imports: [
     BrowserModule, FormsModule
