@@ -1,0 +1,25 @@
+<div class="content">
+    <p>自定義</p>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+    <p [appHighlight]="color">Highlight me!</p>
+    <p [appHighlight]="color" defaultColor="violet">
+      <p>
+        <i>Mouse over the following lines to see fixed highlights</i>
+      </p>
+      <p [appHighlight]="'yellow'">Highlighted in yellow</p>
+      <p appHighlight="orange">Highlighted in orange</p>
+  </div>
+  <div class="content">
+    <p>自定義二</p>
+    <p>輸入內容會隨機變換顏色</p>
+    <input type="text" appHighlight2>
+  </div>
+
+  <div class="content">
+    <p>自定義三</p>
+    <p>@Input and @output</p>
+    {{count}}
+    <button appAppCollar  (count)="count" (result)="countChange($event)"> + </button>
+  </div>
