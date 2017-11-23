@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-component-demo-5',
-  templateUrl: './component-demo-5.component.html',
-  styleUrls: ['./component-demo-5.component.css']
+  selector: 'app-directive-demo-1',
+  templateUrl: './directive-demo-1.component.html',
+  styleUrls: ['./directive-demo-1.component.css']
 })
-export class ComponentDemo5Component implements OnInit {
+export class DirectiveDemo1Component implements OnInit {
   title: string;
   isUnchanged: boolean;
   imgUrl: string;

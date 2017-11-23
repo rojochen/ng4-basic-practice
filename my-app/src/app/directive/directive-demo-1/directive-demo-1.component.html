@@ -97,9 +97,9 @@
   </select>
 
   <p>*ngFor and *ngIf</p>
-  
-    <ng-container *ngFor="let member of getMember();trackBy: trackByIndex;">
-      <p *ngIf="member.id !== 1"  [innerHTML]="member.name"></p>
-    </ng-container>
-  
+
+  <ng-container *ngFor="let member of getMember();trackBy: trackByIndex;">
+    <p *ngIf="member.id !== 1" [innerHTML]="member.name"></p>
+  </ng-container>
+
 </div>

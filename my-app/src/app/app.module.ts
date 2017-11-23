@@ -5,14 +5,14 @@ import { AppComponent } from './app.component';
 import { ComponentDemo1Component } from './component-demo-1/component-demo-1.component';
 import { ComponentDemo2Component } from './component-demo-2/component-demo-2.component';
 import { ComponentDemo3Component } from './component-demo-3/component-demo-3.component';
-import { ComponentDemo5Component } from './component-demo-5/component-demo-5.component';
 import { ComponentDemo4Component } from './component-demo-4/component-demo-4.component';
-import { HighlightDirective } from './highlight.directive';
-import { Highlight2Directive } from './highlight2.directive';
-import { ComponentDemo6Component } from './component-demo-6/component-demo-6.component';
+import { HighlightDirective } from './directive//highlight.directive';
+import { Highlight2Directive } from './directive//highlight2.directive';
 import { AppCollarDirective } from './app-collar.directive';
-import { ComponentDemo7Component } from './component-demo-7/component-demo-7.component';
-import { DelayDirective } from './delay.directive';
+import { DelayDirective } from './directive/delay.directive';
+import { DirectiveDemo1Component } from './directive/directive-demo-1/directive-demo-1.component';
+import { DirectiveDemo2Component } from './directive/directive-demo-2/directive-demo-2.component';
+import { DirectiveDemo3Component } from './directive/directive-demo-3/directive-demo-3.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +20,14 @@ import { DelayDirective } from './delay.directive';
     ComponentDemo1Component,
     ComponentDemo2Component,
     ComponentDemo3Component,
-    ComponentDemo5Component,
     ComponentDemo4Component,
     HighlightDirective,
     Highlight2Directive,
-    ComponentDemo6Component,
     AppCollarDirective,
-    ComponentDemo7Component,
-    DelayDirective
+    DelayDirective,
+    DirectiveDemo1Component,
+    DirectiveDemo2Component,
+    DirectiveDemo3Component
   ],
   imports: [
     BrowserModule, FormsModule
