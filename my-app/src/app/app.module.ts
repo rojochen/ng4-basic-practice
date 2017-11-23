@@ -9,6 +9,9 @@ import { ComponentDemo5Component } from './component-demo-5/component-demo-5.com
 import { ComponentDemo4Component } from './component-demo-4/component-demo-4.component';
 import { HighlightDirective } from './highlight.directive';
 import { Highlight2Directive } from './highlight2.directive';
+import { LastnameUppercasePipe } from './pipe/lastname-uppercase.pipe';
+import { PipeDemo1Component } from './pipe/pipe-demo-1/pipe-demo-1.component';
+import { PipeDemo2Component } from './pipe/pipe-demo-2/pipe-demo-2.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { Highlight2Directive } from './highlight2.directive';
     ComponentDemo5Component,
     ComponentDemo4Component,
     HighlightDirective,
-    Highlight2Directive
+    Highlight2Directive,
+    LastnameUppercasePipe,
+    PipeDemo1Component,
+    PipeDemo2Component
   ],
   imports: [
     BrowserModule, FormsModule
