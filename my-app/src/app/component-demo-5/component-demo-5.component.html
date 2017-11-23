@@ -98,8 +98,8 @@
 
   <p>*ngFor and *ngIf</p>
   
-    <div *ngFor="let member of getMember();trackBy: trackByIndex;">
+    <ng-container *ngFor="let member of getMember();trackBy: trackByIndex;">
       <p *ngIf="member.id !== 1"  [innerHTML]="member.name"></p>
-    </div>
+    </ng-container>
   
 </div>
