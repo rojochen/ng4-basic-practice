@@ -16,6 +16,7 @@ import { DirectiveDemo3Component } from './directive/directive-demo-3/directive-
 import { LastnameUppercasePipe } from './pipe/lastname-uppercase.pipe';
 import { PipeDemo1Component } from './pipe/pipe-demo-1/pipe-demo-1.component';
 import { FilterNumberPipe } from './pipe/filter-name.pipe';
+import { FormDemo1Component } from './form/form-demo-1/form-demo-1.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FilterNumberPipe } from './pipe/filter-name.pipe';
     DirectiveDemo3Component,
     LastnameUppercasePipe,
     PipeDemo1Component,
-    FilterNumberPipe
+    FilterNumberPipe,
+    FormDemo1Component
   ],
   imports: [
     BrowserModule, FormsModule
