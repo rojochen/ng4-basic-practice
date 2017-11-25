@@ -1,4 +1,9 @@
 <p>
+  <!--
+    placeholder="{{textPlaceholder}}"
+    [placeholder]="textPlaceholder"
+    [placeholder]="{{textPlaceholder}}" 這個會有問題
+  -->
   <button [disabled]="disabledValue">Property binding</button>
   <button (click)="changeDisable()">Disabled</button>
 </p>

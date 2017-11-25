@@ -14,8 +14,10 @@
    <img src="{{imgUrl}}" style="height:30px">
 </p>
 <p>
+    
     <!--# 表示宣告的heroInput變數給dom使用 -->
     <input #heroInput (keyup)="keyup(heroInput.value)"> {{values}} <br>   
+    Template Reference Variable: {{heroInput.value}} <br/>
     <!--event binding-->
     <button (click)="say()">(click event)</button>
     <button on-click="say()">on-click</button> <br>
