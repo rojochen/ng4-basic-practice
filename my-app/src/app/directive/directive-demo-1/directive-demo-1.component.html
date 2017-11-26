@@ -64,6 +64,11 @@
   <p *ngIf="isString === 'str'">字串判斷</p>
   <p *ngIf="validationFun()">ngIf = validationFun()</p>
 </div>
+<div class="content">
+  <ng-template [ngIf]="validationFun()">
+    <div>沒有用語法糖的ngIf = validationFun()</div>
+  </ng-template>
+</div>
 <div class="content" [ngSwitch]="myVar">
   <p>ngSwitch</p>
   <div *ngSwitchCase="'A'">Var is A</div>
