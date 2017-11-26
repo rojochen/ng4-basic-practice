@@ -20,6 +20,7 @@ import { FilterNumberPipe } from './pipe/filter-name.pipe';
 import { FormDemo1Component } from './form/form-demo-1/form-demo-1.component';
 import { FormDemo2Component } from './form/form-demo-2/form-demo-2.component';
 import { FormDemo3Component } from './form/form-demo-3/form-demo-3.component';
+import { FormDemo4Component } from './form/form-demo-4/form-demo-4.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FormDemo3Component } from './form/form-demo-3/form-demo-3.component';
     FilterNumberPipe,
     FormDemo1Component,
     FormDemo2Component,
-    FormDemo3Component
+    FormDemo3Component,
+    FormDemo4Component
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule
