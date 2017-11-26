@@ -19,6 +19,8 @@ import { FilterNumberPipe } from './pipe/filter-name.pipe';
 import { LogService } from './service/log.service';
 import { ServiceDemo1Component } from './service/service-demo-1/service-demo-1.component';
 import { UseFactory } from './service/use-factory';
+import { ServiceDemo2Component } from './service/service-demo-2/service-demo-2.component';
+import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { UseFactory } from './service/use-factory';
     LastnameUppercasePipe,
     PipeDemo1Component,
     FilterNumberPipe,
-    ServiceDemo1Component
+    ServiceDemo1Component,
+    ServiceDemo2Component,
+    ServiceDemo3Component
   ],
   imports: [
     BrowserModule, FormsModule
