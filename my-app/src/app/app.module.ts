@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -21,12 +22,15 @@ import { FormDemo1Component } from './form/form-demo-1/form-demo-1.component';
 import { FormDemo2Component } from './form/form-demo-2/form-demo-2.component';
 import { FormDemo3Component } from './form/form-demo-3/form-demo-3.component';
 import { FormDemo4Component } from './form/form-demo-4/form-demo-4.component';
-import { LogService } from './service/log.service';
+
 import { ServiceDemo1Component } from './service/service-demo-1/service-demo-1.component';
-import { UseFactory } from './service/use-factory';
+
 import { ServiceDemo2Component } from './service/service-demo-2/service-demo-2.component';
 import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.component';
-
+import { ServiceDemo4Component } from './service/service-demo-4/service-demo-4.component';
+import { LogService } from './service/log.service';
+import { UseFactory } from './service/use-factory';
+import { ApiService } from './service/api.service';
 
 @NgModule({
   declarations: [
@@ -51,15 +55,17 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
     FormDemo4Component,
     ServiceDemo1Component,
     ServiceDemo2Component,
-    ServiceDemo3Component
+    ServiceDemo3Component,
+    ServiceDemo4Component
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule
+    BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule
   ],
   providers: [
     { provide: LogService, useClass: LogService }, //可以使用簡潔的語法，直接使用LogService
     { provide: 'LogServiceAlias', useExisting: LogService },
     { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },
+    ApiService,
     { provide: 'UseFactory', useFactory: UseFactory, deps: [LogService] } //deps 工廠將取獲取deps 中指定類的實例
   ],
   bootstrap: [AppComponent]
