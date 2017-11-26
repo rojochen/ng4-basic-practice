@@ -44,6 +44,7 @@ import { UseFactory } from './service/use-factory';
   ],
   providers: [
     { provide: LogService, useClass: LogService }, //可以使用簡潔的語法，直接使用LogService
+    { provide: 'LogServiceAlias', useExisting: LogService },
     { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },
     { provide: 'UseFactory', useFactory: UseFactory, deps: [LogService] } //deps 工廠將取獲取deps 中指定類的實例
   ],

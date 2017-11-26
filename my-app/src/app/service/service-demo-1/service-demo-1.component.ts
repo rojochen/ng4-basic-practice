@@ -8,9 +8,13 @@ import { LogService } from '../log.service';
 })
 export class ServiceDemo1Component implements OnInit {
 
-  constructor( @Inject('UseFactory') useFactory, private Log: LogService) {
+  constructor(
+    @Inject('UseFactory') private useFactory: any,
+    @Inject('LogServiceAlias') private logAlias: LogService,
+    private Log: LogService
+  ) {
     this.Log.debug('useClassService');
-    this.Log.debug(useFactory);
+    this.logAlias.error('useExisting');
   }
 
   ngOnInit() {
