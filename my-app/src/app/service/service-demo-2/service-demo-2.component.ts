@@ -4,7 +4,7 @@ import { UserService } from '../user.service';
   selector: 'app-service-demo-2',
   templateUrl: './service-demo-2.component.html',
   styleUrls: ['./service-demo-2.component.css'],
-  providers: [UserService]
+  providers: [UserService] //依賴著注入配置
 })
 export class ServiceDemo2Component implements OnInit {
 
