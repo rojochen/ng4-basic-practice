@@ -1,3 +1,50 @@
-<p>
-  form-demo-1 works!
-</p>
+<h3>Template Driven template</h3>
+<form novalidate  ref-f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div>
+      <span>Full name</span>
+      <input
+        type="text"
+        name="name"
+        ngModel
+        required
+        pattern="[a-zA-Z ]*" 
+        placeholder="Your name">
+    </div>
+    
+    <div ngModelGroup="account">
+      <div>
+        <span>Email address</span>
+        <input
+          type="email"
+          name="email"
+          ngModel
+          email="true"
+          placeholder="Your email address">
+      </div>
+      <div>
+        <span>Confirm address</span>
+        <input
+          type="email"
+          name="confirm"
+          ngModel
+          placeholder="Confirm your email address">
+      </div>
+    </div>
+    <button type="submit" [disabled]="f.invalid">送出</button>
+  </form>
+  <div>
+  <div>
+      ngForm: {{ f.value | json }} <br/>
+  </div>    
+  <div>
+      model: {{ user | json }}  <br/>
+  </div>
+  <div>
+     valid : {{f.valid}} <br/>
+     invalid : {{f.invalid}} <br/>
+     dirty : {{f.dirty}} <br/>
+     pristine :{{f.pristine }}<br/>
+     touched:{{f.touched}} <br/>
+     untouched:{{f.unfouched}}
+  </div>
+</div>

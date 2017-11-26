@@ -1,0 +1,27 @@
+
+<form novalidate [formGroup]="user"   (ngSubmit)="onSubmit(user)">
+    <label>
+      <span>Full name</span>
+      <input
+        type="text"
+        placeholder="Your full name"
+        formControlName="name">
+    </label>
+    <div formGroupName="account">
+      <div>
+        <span>Email address</span>
+        <input
+          type="email"
+          placeholder="Your email address"
+          formControlName="email">
+      </div>
+      <div>
+        <span>Confirm address</span>
+        <input
+          type="email"
+          placeholder="Confirm your email address"
+          formControlName="confirm">
+      </div>
+    </div>
+    <button type="submit">Sign up</button>
+  </form>

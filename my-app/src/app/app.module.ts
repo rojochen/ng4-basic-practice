@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ComponentDemo1Component } from './component/component-demo-1/component-demo-1.component';
 import { ComponentDemo2Component } from './component/component-demo-2/component-demo-2.component';
@@ -17,6 +18,8 @@ import { LastnameUppercasePipe } from './pipe/lastname-uppercase.pipe';
 import { PipeDemo1Component } from './pipe/pipe-demo-1/pipe-demo-1.component';
 import { FilterNumberPipe } from './pipe/filter-name.pipe';
 import { FormDemo1Component } from './form/form-demo-1/form-demo-1.component';
+import { FormDemo2Component } from './form/form-demo-2/form-demo-2.component';
+import { FormDemo3Component } from './form/form-demo-3/form-demo-3.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +38,12 @@ import { FormDemo1Component } from './form/form-demo-1/form-demo-1.component';
     LastnameUppercasePipe,
     PipeDemo1Component,
     FilterNumberPipe,
-    FormDemo1Component
+    FormDemo1Component,
+    FormDemo2Component,
+    FormDemo3Component
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
