@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -31,6 +31,7 @@ import { ServiceDemo4Component } from './service/service-demo-4/service-demo-4.c
 import { LogService } from './service/log.service';
 import { UseFactory } from './service/use-factory';
 import { ApiService } from './service/api.service';
+import { ApiInterceptorService } from './service/api-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,11 @@ import { ApiService } from './service/api.service';
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptorService,
+      multi: true,
+    },
     { provide: LogService, useClass: LogService }, //可以使用簡潔的語法，直接使用LogService
     { provide: 'LogServiceAlias', useExisting: LogService },
     { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },
