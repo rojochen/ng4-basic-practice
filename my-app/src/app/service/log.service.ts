@@ -6,16 +6,16 @@ export class LogService {
   constructor() {
     this.C = console;
   }
-  log(str): void {
+  debug(str: string | number): void {
     this.C.log(str);
   }
-  info(str): void {
+  info(str: string | number): void {
     this.C.info(str);
   }
-  warn(str): void {
+  warn(str: string | number): void {
     this.C.warn(str);
   }
-  error(str): void {
+  error(str: string | number): void {
     this.C.error(str);
   }
 }

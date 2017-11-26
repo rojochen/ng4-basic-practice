@@ -17,6 +17,9 @@ import { LastnameUppercasePipe } from './pipe/lastname-uppercase.pipe';
 import { PipeDemo1Component } from './pipe/pipe-demo-1/pipe-demo-1.component';
 import { FilterNumberPipe } from './pipe/filter-name.pipe';
 import { LogService } from './service/log.service';
+import { ServiceDemo1Component } from './service/service-demo-1/service-demo-1.component';
+import { UseFactory } from './service/use-factory';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +36,17 @@ import { LogService } from './service/log.service';
     DirectiveDemo3Component,
     LastnameUppercasePipe,
     PipeDemo1Component,
-    FilterNumberPipe
+    FilterNumberPipe,
+    ServiceDemo1Component
   ],
   imports: [
     BrowserModule, FormsModule
   ],
-  providers: [LogService],
+  providers: [
+    { provide: LogService, useClass: LogService }, //可以使用簡潔的語法，直接使用LogService
+    { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },
+    { provide: 'UseFactory', useFactory: UseFactory }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
