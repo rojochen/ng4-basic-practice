@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-directive-demo-1',
   templateUrl: './directive-demo-1.component.html',
