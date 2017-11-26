@@ -16,7 +16,7 @@ import { DirectiveDemo3Component } from './directive/directive-demo-3/directive-
 import { LastnameUppercasePipe } from './pipe/lastname-uppercase.pipe';
 import { PipeDemo1Component } from './pipe/pipe-demo-1/pipe-demo-1.component';
 import { FilterNumberPipe } from './pipe/filter-name.pipe';
-
+import { LogService } from './service/log.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +38,7 @@ import { FilterNumberPipe } from './pipe/filter-name.pipe';
   imports: [
     BrowserModule, FormsModule
   ],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

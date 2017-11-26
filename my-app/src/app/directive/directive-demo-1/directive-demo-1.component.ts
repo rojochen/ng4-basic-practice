@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LogService } from '../../service/log.service';
 @Component({
   selector: 'app-directive-demo-1',
   templateUrl: './directive-demo-1.component.html',
@@ -19,7 +19,7 @@ export class DirectiveDemo1Component implements OnInit {
   isString: string;
   myVar: string;
   color: string;
-  constructor() {
+  constructor(private Log: LogService) {
     this.title = 'Template Syntax';
     this.isUnchanged = true;
     this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
@@ -31,6 +31,8 @@ export class DirectiveDemo1Component implements OnInit {
     this.smallNum = 5;
     this.isString = 'str';
     this.myVar = 'A';
+    this.Log.log(this.myVar);
+    this.Log.error(this.myVar);
   }
 
   ngOnInit() {
