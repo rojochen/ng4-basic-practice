@@ -18,6 +18,7 @@ export class DirectiveDemo1Component implements OnInit {
   isString: string;
   myVar: string;
   color: string;
+  auth: boolean;
   constructor() {
     this.title = 'Template Syntax';
     this.isUnchanged = true;
@@ -30,6 +31,7 @@ export class DirectiveDemo1Component implements OnInit {
     this.smallNum = 5;
     this.isString = 'str';
     this.myVar = 'A';
+    this.auth = false;
   }
 
   ngOnInit() {

@@ -69,6 +69,14 @@
     <div>沒有用語法糖的ngIf = validationFun()</div>
   </ng-template>
 </div>
+<div class="content">
+  <h2>*ngIf else</h2>
+  <ng-template #fetching class="content">
+    <p>*ngIf else {{auth}}</p>
+  </ng-template>
+  <p *ngIf="auth; else fetching;">
+  </p>
+</div>
 <div class="content" [ngSwitch]="myVar">
   <p>ngSwitch</p>
   <div *ngSwitchCase="'A'">Var is A</div>
