@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: RouteDemo1Component },
   { path: 'index', component: RouteDemo2Component },
   { path: '**', component: RouteDemo3Component }
-];
+]; 
 
 @NgModule({
   imports: [
