@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ApiService {
@@ -10,10 +10,11 @@ export class ApiService {
     private http: HttpClient
   ) {
   }
-  getMember() {
-    this.http.get(this.apiDomain + '/posts').subscribe(res => {
-      console.log('res: ', res);
-    });
+  getMember(): Observable<any> {
+    return this.http.get(this.apiDomain + '/posts');
+  }
+  getPromiseMember(): Promise<any> {
+    return this.http.get(this.apiDomain + '/posts').toPromise();
   }
 
 }

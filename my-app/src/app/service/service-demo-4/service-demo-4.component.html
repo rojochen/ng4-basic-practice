@@ -1,3 +1,28 @@
-<p>
-  service-demo-4 works!
-</p>
+<h2>example1</h2>
+<table border=1  align="center">
+  <tr>
+    <th>name</th>
+  </tr>
+  <tr *ngFor="let member of memberList">
+    <td>{{ member.userId }}</td>
+  </tr>
+</table>
+<h2>example2</h2>
+<table border=1  align="center">
+  <tr>
+    <th>name</th>
+  </tr>
+  <tr *ngFor="let member of memberList2 | async">
+    <td>{{ member.userId }}</td>
+  </tr>
+</table>
+
+<h2>example3</h2>
+<table border=1  align="center">
+  <tr>
+    <th>name</th>
+  </tr>
+  <tr *ngFor="let member of memberList3">
+    <td>{{ member.userId }}</td>
+  </tr>
+</table>
