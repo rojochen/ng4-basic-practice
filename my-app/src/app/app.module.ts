@@ -32,6 +32,7 @@ import { LogService } from './service/log.service';
 import { UseFactory } from './service/use-factory';
 import { ApiService } from './service/api.service';
 import { ApiInterceptorService } from './service/api-interceptor.service';
+import { ApiTimeInterceptorService } from './service/api-time-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,11 @@ import { ApiInterceptorService } from './service/api-interceptor.service';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiTimeInterceptorService,
       multi: true,
     },
     { provide: LogService, useClass: LogService }, //可以使用簡潔的語法，直接使用LogService

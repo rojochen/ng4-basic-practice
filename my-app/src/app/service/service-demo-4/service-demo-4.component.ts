@@ -22,9 +22,12 @@ export class ServiceDemo4Component implements OnInit {
       this.memberList = res;
     });
     this.memberList2 = this.api.getMember();
+
     this.api.getPromiseMember().then(res => {
-      this.Log.error(res);
       this.memberList3 = res;
+    });
+    this.api.getPostMember().subscribe(res => {
+      this.Log.error(res);
     });
   }
 
