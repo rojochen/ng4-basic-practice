@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Observable } from 'rxjs/Observable';
 import { LogService } from '../log.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/forkJoin';
 @Component({
   selector: 'app-service-demo-4',
   templateUrl: './service-demo-4.component.html',
@@ -28,6 +29,14 @@ export class ServiceDemo4Component implements OnInit {
     });
     this.api.getPostMember().subscribe(res => {
       this.Log.error(res);
+    });
+    this.forkJoin();
+  }
+  //forkJoin = promise.all([])
+  forkJoin() {
+    Observable.forkJoin([this.api.getMember(), this.api.getPromiseMember()])
+    .subscribe(results => {
+      console.error('results: ', results);
     });
   }
 
