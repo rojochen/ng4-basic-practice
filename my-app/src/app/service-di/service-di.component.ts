@@ -13,11 +13,11 @@ import { SmsServiceProviderService } from './service/sms/sms-service-provider.se
 
 })
 export class ServiceDiComponent implements OnInit {
-  title: string;
+  message: string;
   constructor(private notificationService: NotificationService) { }
 
   ngOnInit() {
-    this.title = this.notificationService.showMessage();
+    this.message = this.notificationService.showMessage();
     console.log('this.title: ', this.title);
   }
 
