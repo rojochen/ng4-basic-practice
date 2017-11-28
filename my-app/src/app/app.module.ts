@@ -35,6 +35,7 @@ import { UseFactory } from './service/use-factory';
 import { ApiService } from './service/api.service';
 import { ApiInterceptorService } from './service/api-interceptor.service';
 import { ApiTimeInterceptorService } from './service/api-time-interceptor.service';
+import { ServiceDiComponent } from './service-di/service-di.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ApiTimeInterceptorService } from './service/api-time-interceptor.servic
     ServiceDemo1Component,
     ServiceDemo2Component,
     ServiceDemo3Component,
-    ServiceDemo4Component
+    ServiceDemo4Component,
+    ServiceDiComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RoutingModule
