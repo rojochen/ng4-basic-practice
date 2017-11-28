@@ -14,7 +14,7 @@ export class ServiceDemo4Component implements OnInit {
   memberList3: any;
   constructor(
     @Inject('API_URL') private apiDomain: string,
-    private api: ApiService,
+    private api: IService,
     private Log: LogService
   ) { }
 
