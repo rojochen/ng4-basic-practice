@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./route-demo-3.component.css']
 })
 export class RouteDemo3Component implements OnInit {
-
-  constructor() { }
+  username: string;
+  constructor() {
+    this.username = 'louis';
+  }
 
   ngOnInit() {
   }
-
 }

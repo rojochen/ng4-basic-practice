@@ -7,13 +7,12 @@ import { RouteDemo2Component } from '../routing/route-demo-2/route-demo-2.compon
 import { RouteDemo3Component } from './route-demo-3/route-demo-3.component';
 import { RouteDemo4Component } from './route-demo-4/route-demo-4.component';
 import { RouteDemo5Component } from './route-demo-5/route-demo-5.component';
-
-const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: RouteDemo1Component },
-  { path: 'index', component: RouteDemo2Component },
-  { path: '**', component: RouteDemo3Component }
-];
+import { RouteDemo6Component } from './route-demo6/route-demo6.component';
+import { RouteDemo7Component } from './route-demo7/route-demo7.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+// routeConfig
+import { Basic_Route_Config, Dynamic_Route_Config, Child_Route_Config } from './routeConfig';
+const routes: Routes = Child_Route_Config;
 
 @NgModule({
   imports: [
@@ -27,6 +26,6 @@ const routes: Routes = [
     { provide: APP_BASE_HREF, useValue: '/' } //open html5 inject porvide
   ],
   exports: [RouterModule],
-  declarations: [RouteDemo1Component, RouteDemo2Component, RouteDemo3Component, RouteDemo4Component, RouteDemo5Component]
+  declarations: [RouteDemo1Component, RouteDemo2Component, RouteDemo3Component, RouteDemo4Component, RouteDemo5Component, ErrorPageComponent, RouteDemo6Component, RouteDemo7Component]
 })
 export class RoutingModule { }
