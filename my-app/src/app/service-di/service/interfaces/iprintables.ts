@@ -1,3 +1,3 @@
-export abstract class IPrintable {
-    abstract printMessage();
+export interface  IPrintable {
+     printMessage();
 }

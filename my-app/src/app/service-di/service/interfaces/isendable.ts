@@ -1,3 +1,3 @@
-export abstract class ISendable {
-    abstract sendMessage(): string;
+export interface  ISendable {
+     sendMessage(): string;
 }

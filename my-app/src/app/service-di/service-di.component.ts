@@ -7,8 +7,8 @@ import { SmsServiceProviderService } from './service/sms/sms-service-provider.se
   templateUrl: './service-di.component.html',
   styleUrls: ['./service-di.component.css'],
   providers: [
-    NotificationService,
-    { provide: ISendable, useClass: SmsServiceProviderService }
+    { provide: 'ISendable', useClass: SmsServiceProviderService },
+    NotificationService
   ]
 
 })
@@ -18,7 +18,7 @@ export class ServiceDiComponent implements OnInit {
 
   ngOnInit() {
     this.message = this.notificationService.showMessage();
-    console.log('this.title: ', this.title);
+    console.log('this.title: ', this.message);
   }
 
 }

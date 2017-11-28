@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { ISendable } from '../interfaces/isendable';
 @Injectable()
 export class NotificationService {
-
-  constructor(private smsService: ISendable) {
+  smsService: ISendable = null;
+  constructor( @Inject('ISendable')smsService: ISendable) {
+      this.smsService = smsService;
   }
   showMessage(): string {
     return this.smsService.sendMessage();
