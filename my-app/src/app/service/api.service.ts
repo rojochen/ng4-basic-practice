@@ -2,8 +2,13 @@ import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 
+interface IService {
+  getMember(): Observable<any>;
+  getPromiseMember(): Promise<any>;
+  getPostMember(): Observable<any>;
+}
 @Injectable()
-export class ApiService {
+export class ApiService implements IService {
 
   constructor(
     @Inject('API_URL') private apiDomain: string,
