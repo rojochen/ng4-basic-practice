@@ -14,7 +14,7 @@ export class ServiceDemo4Component implements OnInit {
   memberList3: any;
   constructor(
     @Inject('API_URL') private apiDomain: string,
-    private api: IService,
+    private api: ApiService,
     private Log: LogService
   ) { }
 
@@ -35,9 +35,9 @@ export class ServiceDemo4Component implements OnInit {
   //forkJoin = promise.all([])
   forkJoin() {
     Observable.forkJoin([this.api.getMember(), this.api.getPromiseMember()])
-    .subscribe(results => {
-      console.error('results: ', results);
-    });
+      .subscribe(results => {
+        console.error('results: ', results);
+      });
   }
 
 }
