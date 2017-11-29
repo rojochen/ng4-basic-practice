@@ -30,6 +30,7 @@ import { ServiceDiComponent } from './service-di/service-di.component';
 
 // global service
 import { ApiInterceptorService } from './provide/api-interceptor.service';
+import { ServiceDemo1Component } from './service/service-demo-1/service-demo-1.component';
 
 
 
@@ -56,7 +57,8 @@ import { ApiInterceptorService } from './provide/api-interceptor.service';
     FormDemo2Component,
     FormDemo3Component,
     FormDemo4Component,
-    ServiceDiComponent
+    ServiceDiComponent,
+    ServiceDemo1Component
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RoutingModule
