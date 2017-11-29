@@ -26,6 +26,8 @@ export class ServiceDemo2Component implements OnInit {
       this.get = res;
     });
     this.getAsync = this.api.get(this.apiDomain + '/posts');
+
+    //es6 標準promise的寫法
     this.api.getPromise(this.apiDomain + '/posts').then(res => {
       this.getPromise = res;
     });

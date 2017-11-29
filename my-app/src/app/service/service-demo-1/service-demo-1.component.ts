@@ -8,9 +8,9 @@ import { RandomMath } from '../provider/random-math.service';
   templateUrl: './service-demo-1.component.html',
   styleUrls: ['./service-demo-1.component.css'],
   providers: [
-    LoggerService, //如果 token name 等同useClass 是可以縮寫成這樣
-    { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },  //useValue
-    { provide: 'RandomMath', useFactory: RandomMath, deps: [LoggerService] }, //useFactory
+    LoggerService, // 如果 token name 等同useClass 是可以縮寫成這樣
+    { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },  // useValue
+    { provide: 'RandomMath', useFactory: RandomMath, deps: [LoggerService] }, // useFactory ,get object by function
     { provide: 'LogServiceAlias', useExisting: LoggerService }, // useExisting
   ]
 })
