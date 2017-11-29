@@ -23,9 +23,14 @@ export class ServiceDemo2Component implements OnInit {
   ngOnInit() {
     // this.Log.debug('Service demo 2'); 這邊無法使用LogService 因為沒有在這邊inject
     this.api.get(this.apiDomain + '/posts').subscribe(res => {
+      console.log('res type json: ', typeof res);
       this.get = res;
     });
     this.getAsync = this.api.get(this.apiDomain + '/posts');
+    this.api.getTypeText(this.apiDomain + '/posts').subscribe(res => {
+      // console.log('res type text: ', res);
+      console.log('res type text: ', typeof res);
+    });
     this.api.getPromise(this.apiDomain + '/posts').then(res => {
       this.getPromise = res;
     });
