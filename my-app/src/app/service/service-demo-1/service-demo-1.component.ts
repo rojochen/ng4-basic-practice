@@ -1,3 +1,4 @@
+// demo inject and 4 provide
 import { Component, OnInit, Inject } from '@angular/core';
 import { LoggerService } from '../provider/logger.service';
 import { RandomMath } from '../provider/random-math.service';

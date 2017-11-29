@@ -1,0 +1,37 @@
+<p>service-demo-2 works!</p>
+
+<h2>get 正常版</h2>
+<table border=1 align="center">
+  <tr>
+    <th>ID</th>
+    <th>TITLE</th>
+  </tr>
+  <tr *ngFor="let list of get">
+    <td>{{ list.userId }}</td>
+    <td>{{ list.title }}</td>
+  </tr>
+</table>
+
+<h2>get pipe async</h2>
+<table border=1 align="center">
+  <tr>
+    <th>ID</th>
+    <th>TITLE</th>
+  </tr>
+  <tr *ngFor="let list of getAsync | async">
+    <td>{{ list.userId }}</td>
+    <td>{{ list.title }}</td>
+  </tr>
+</table>
+
+<h2>get Promise 版</h2>
+<table border=1 align="center">
+  <tr>
+    <th>ID</th>
+    <th>TITLE</th>
+  </tr>
+  <tr *ngFor="let list of getPromise">
+    <td>{{ list.userId }}</td>
+    <td>{{ list.title }}</td>
+  </tr>
+</table>
