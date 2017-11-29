@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './routing/routing.module';
+
 //component
 import { AppComponent } from './app.component';
 import { ComponentDemo1Component } from './component/component-demo-1/component-demo-1.component';
@@ -25,17 +26,14 @@ import { FormDemo1Component } from './form/form-demo-1/form-demo-1.component';
 import { FormDemo2Component } from './form/form-demo-2/form-demo-2.component';
 import { FormDemo3Component } from './form/form-demo-3/form-demo-3.component';
 import { FormDemo4Component } from './form/form-demo-4/form-demo-4.component';
-import { ServiceDemo1Component } from './service/service-demo-1/service-demo-1.component';
-import { ServiceDemo2Component } from './service/service-demo-2/service-demo-2.component';
-import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.component';
-import { ServiceDemo4Component } from './service/service-demo-4/service-demo-4.component';
-// service
-import { LogService } from './service/log.service';
-import { UseFactory } from './service/use-factory';
-import { ApiService } from './service/api.service';
-import { ApiInterceptorService } from './service/api-interceptor.service';
-import { ApiTimeInterceptorService } from './service/api-time-interceptor.service';
 import { ServiceDiComponent } from './service-di/service-di.component';
+
+// global service
+import { ApiInterceptorService } from './provide/api-interceptor.service';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -58,10 +56,6 @@ import { ServiceDiComponent } from './service-di/service-di.component';
     FormDemo2Component,
     FormDemo3Component,
     FormDemo4Component,
-    ServiceDemo1Component,
-    ServiceDemo2Component,
-    ServiceDemo3Component,
-    ServiceDemo4Component,
     ServiceDiComponent
   ],
   imports: [
@@ -73,16 +67,11 @@ import { ServiceDiComponent } from './service-di/service-di.component';
       useClass: ApiInterceptorService,
       multi: true,
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ApiTimeInterceptorService,
-      multi: true,
-    },
-    { provide: LogService, useClass: LogService }, //可以使用簡潔的語法，直接使用LogService
-    { provide: 'LogServiceAlias', useExisting: LogService },
-    { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },
-    ApiService,
-    { provide: 'UseFactory', useFactory: UseFactory, deps: [LogService] } //deps 工廠將取獲取deps 中指定類的實例
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: ApiTimeInterceptorService,
+    //   multi: true,
+    // }
   ],
   bootstrap: [AppComponent]
 })
