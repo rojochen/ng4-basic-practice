@@ -11,8 +11,8 @@ export class ApiService implements IApi {
   constructor(
     private http: HttpClient
   ) { }
-  get(aipUrl): Observable<any> {
-    return this.http.get(aipUrl);
+  get<T>(aipUrl): Observable<any> {
+    return this.http.get<T>(aipUrl);
   }
   getTypeText(aipUrl): Observable<any> {
     return this.http.get(aipUrl, { responseType: 'text' });
