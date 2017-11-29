@@ -9,7 +9,9 @@ import { RandomMath } from '../provider/random-math.service';
   styleUrls: ['./service-demo-1.component.css'],
   providers: [
     LoggerService, //如果 token name 等同useClass 是可以縮寫成這樣
-    { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },  //useValue
+    { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },  //useValue by srting
+    { provide: 'UseValueByNumber', useValue: 10 },  //useValue by number
+    { provide: 'UseValueByObj', useValue: { name: 'object' } },  //useValue by {}
     { provide: 'RandomMath', useFactory: RandomMath, deps: [LoggerService] }, //useFactory
     { provide: 'LogServiceAlias', useExisting: LoggerService }, // useExisting
   ]
@@ -19,6 +21,8 @@ export class ServiceDemo1Component implements OnInit {
   constructor(
     private Log: LoggerService,
     @Inject('API_URL') private apiDomain: string, //useValue
+    @Inject('UseValueByNumber') private UseValueByNumber: number, //useValue
+    @Inject('UseValueByObj') private UseValueByObj: object, //useValue
     @Inject('RandomMath') private randomMath: number,
     @Inject('LogServiceAlias') private logServiceAlias: LoggerService
   ) { }
@@ -27,6 +31,8 @@ export class ServiceDemo1Component implements OnInit {
     this.title = 'Service inject demo';
     this.Log.debug(this.title);
     this.Log.debug('apiDomain= ' + this.apiDomain);
+    this.Log.debug('UseValueByNumber= ' + this.UseValueByNumber);
+    this.Log.debug('UseValueByObj= ' + this.UseValueByObj);
     this.logServiceAlias.debug('logServiceAlias');
   }
 
