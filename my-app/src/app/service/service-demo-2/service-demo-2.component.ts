@@ -2,7 +2,13 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { LoggerService } from '../provider/logger.service';
 import { ApiService } from '../provider/api.service';
 import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
+
 import 'rxjs/add/observable/forkJoin';
+interface ItemsResponse {
+  results: string[];
+  louis: string;
+}
 @Component({
   selector: 'app-service-demo-2',
   templateUrl: './service-demo-2.component.html',
@@ -19,10 +25,16 @@ export class ServiceDemo2Component implements OnInit {
   constructor(
     // private Log: LoggerService //這邊無法使用LogService 因為沒有在這邊inject providers
     @Inject('API_URL') private apiDomain: string, // useValue
-    private api: ApiService
+    private api: ApiService,
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
+    this.http.get<ItemsResponse>('/api/items').subscribe(data => {
+      // data is now an instance of type ItemsResponse, so you can do this:
+      
+       console.log(data.louis);
+    });
     // this.Log.debug('Service demo 2'); 這邊無法使用LogService 因為沒有在這邊inject
     this.api.get(this.apiDomain + '/posts').subscribe(res => {
       console.log('res type json: ', typeof res);
