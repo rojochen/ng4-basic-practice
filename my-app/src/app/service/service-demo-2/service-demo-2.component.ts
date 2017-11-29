@@ -2,12 +2,14 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { LoggerService } from '../provider/logger.service';
 import { ApiService } from '../provider/api.service';
 import { Observable } from 'rxjs/Observable';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import 'rxjs/add/observable/forkJoin';
 interface ItemsResponse {
-  results: string[];
-  louis: string;
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
 }
 @Component({
   selector: 'app-service-demo-2',
@@ -30,26 +32,36 @@ export class ServiceDemo2Component implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.http.get<ItemsResponse>('/api/items').subscribe(data => {
-      // data is now an instance of type ItemsResponse, so you can do this:
-      
-       console.log(data.louis);
-    });
     // this.Log.debug('Service demo 2'); 這邊無法使用LogService 因為沒有在這邊inject
+
+    this.http.get<ItemsResponse>(this.apiDomain + '/posts?userId=1').toPromise().then(data => {
+      console.log(data.body);
+    });
+
+    this.http.get<ItemsResponse>(this.apiDomain + '/posts?userId=1').toPromise().then(data => {
+      console.log(data.userId);
+    }, (err: HttpErrorResponse) => {
+      console.log('err: ', err);
+      console.log('Something went wrong!');
+    });
+
+
     this.api.get(this.apiDomain + '/posts').subscribe(res => {
       console.log('res type json: ', typeof res);
       this.get = res;
     });
+
     this.getAsync = this.api.get(this.apiDomain + '/posts');
 
     // es6 標準promise的寫法
     this.api.getTypeText(this.apiDomain + '/posts').subscribe(res => {
-      // console.log('res type text: ', res);
       console.log('res type text: ', typeof res);
     });
+
     this.api.getPromise(this.apiDomain + '/posts').then(res => {
       this.getPromise = res;
     });
+
     setTimeout(() => {
       this.api.post('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
