@@ -1,3 +1,11 @@
-<p>
-  basic-child-1 works!
-</p>
+<div>
+    <h1>在Basic Child 1</h1>
+    <p>routerLink 等同 ng1 href="#/'route path'"</p>
+    <p>這是靜態的導頁</p>
+    <p>routerLinkActive 告知User你在哪個頁面，在的話會在當前頁面class.list added 指定的class</p>
+    <nav>
+      <a [style.display]="'block'" routerLinkActive="active-link" routerLink="/basic/parent">Basic home!</a>
+      <a [style.display]="'block'" routerLinkActive="active-link" routerLink="/basic/child1">go to Basic Child - 1</a>
+      <a [style.display]="'block'" routerLinkActive="active-link" routerLink="/basic/child2">go to Basic Child - 2</a>
+    </nav>
+  </div>

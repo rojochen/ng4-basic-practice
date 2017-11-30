@@ -18,7 +18,7 @@ import { BasicModule } from './basic/basic.module';
     CommonModule,
     BasicModule
   ],
-  providers: [],
+  providers: [openHashConfig],
   declarations: [],
   exports: [BasicModule]
 })

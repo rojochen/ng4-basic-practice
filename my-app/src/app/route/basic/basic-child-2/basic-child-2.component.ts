@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-basic-child-2',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicChild2Component implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
+  }
+  goBack() {
+    this.location.back();
   }
 
 }
