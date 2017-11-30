@@ -11,6 +11,7 @@ const customBaseHref = { provide: APP_BASE_HREF, useValue: '/' };
 // route module
 import { BasicModule } from './basic/basic.module';
 import { DynamicModule } from './dynamic/dynamic.module';
+import { ChildModule } from './child/child.module';
 // common route service
 import { RouteService } from './service/route.service';
 
@@ -19,7 +20,8 @@ import { RouteService } from './service/route.service';
   imports: [
     CommonModule,
     // BasicModule,
-    DynamicModule
+    // DynamicModule,
+    ChildModule
   ],
   providers: [openHashConfig, RouteService],
   declarations: [],
