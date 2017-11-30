@@ -29,12 +29,12 @@ import { ServiceDemo2Component } from './service/service-demo-2/service-demo-2.c
 import { ServiceDiComponent } from './service-di/service-di.component';
 
 // global service
-import { ApiInterceptorService } from './provide/api-interceptor.service';
-import { TimingInterceptorService } from './provide/timing-interceptor.service';
+import { ApiInterceptorService } from './interceptor/api-interceptor.service';
+import { TimingInterceptorService } from './interceptor/timing-interceptor.service';
 
 
 // route module
-import { RouteModule} from './route/route.module';
+import { RouteModule } from './route/route.module';
 
 @NgModule({
   declarations: [

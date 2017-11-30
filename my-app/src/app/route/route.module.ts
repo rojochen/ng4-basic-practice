@@ -2,19 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule, LocationStrategy, HashLocationStrategy, PathLocationStrategy, APP_BASE_HREF } from '@angular/common';
 
 // 開啟Hash 模式需要import LocationStrategy & HashLocationStrategy from '@angular/common。
-const openHashConfig =  { provide: LocationStrategy, useClass: HashLocationStrategy };
+const openHashConfig = { provide: LocationStrategy, useClass: HashLocationStrategy };
 // 開啟 html5 模式需import LocationStrategy & PathLocationStrategy from '@angular/common。
 const openHtml5Config = { provide: LocationStrategy, useClass: PathLocationStrategy };
 // 如果想用module 自訂base url 需要import APP_BASE_HREF from '@angular/common ， 但 index.html 有<base href="/">就會無效。
 const customBaseHref = { provide: APP_BASE_HREF, useValue: '/' };
 
 // share module
-import {ShareModule } from './share/share.module'
+import { ShareModule } from './share/share.module';
 
 // route module
 import { BasicModule } from './basic/basic.module';
 import { DynamicModule } from './dynamic/dynamic.module';
-import { ChildModule } from './child/child.module';
 // common route service
 import { RouteService } from './service/route.service';
 
@@ -24,11 +23,10 @@ import { RouteService } from './service/route.service';
     CommonModule,
     ShareModule,
     // BasicModule,
-    // DynamicModule,
-    ChildModule
+    // DynamicModule
   ],
   providers: [openHashConfig, RouteService],
   declarations: [],
-  exports: [ChildModule] // ps 記得要換route 
+  exports: [BasicModule] // ps 記得要換route
 })
 export class RouteModule { }
