@@ -26,12 +26,14 @@ import { FormDemo1Component } from './form/form-demo-1/form-demo-1.component';
 import { FormDemo2Component } from './form/form-demo-2/form-demo-2.component';
 import { FormDemo3Component } from './form/form-demo-3/form-demo-3.component';
 import { FormDemo4Component } from './form/form-demo-4/form-demo-4.component';
+import { ServiceDemo1Component } from './service/service-demo-1/service-demo-1.component';
+import { ServiceDemo2Component } from './service/service-demo-2/service-demo-2.component';
 import { ServiceDiComponent } from './service-di/service-di.component';
 
 // global service
 import { ApiInterceptorService } from './provide/api-interceptor.service';
-import { ServiceDemo1Component } from './service/service-demo-1/service-demo-1.component';
-import { ServiceDemo2Component } from './service/service-demo-2/service-demo-2.component';
+import { TimingInterceptorService } from './provide/timing-interceptor.service';
+
 
 
 
@@ -71,11 +73,11 @@ import { ServiceDemo2Component } from './service/service-demo-2/service-demo-2.c
       useClass: ApiInterceptorService,
       multi: true,
     },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: ApiTimeInterceptorService,
-    //   multi: true,
-    // }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TimingInterceptorService,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })

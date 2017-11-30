@@ -21,11 +21,11 @@ class ItemResClass {
 class OtherPartsOfTheRequest {
   constructor() {
   }
-  setHeader(HTTP, reqBody, reqHeader) {
-    return HTTP.post('https://jsonplaceholder.typicode.com/posts', reqBody, reqHeader);
+  setHeader(HTTP, domainUrl, reqBody, reqHeader) {
+    return HTTP.post(domainUrl, reqBody, reqHeader);
   }
-  setParams(HTTP, reqBody, reqParams) {
-    return HTTP.post('https://jsonplaceholder.typicode.com/posts', reqBody, reqParams);
+  setParams(HTTP, domainUrl, reqBody, reqParams) {
+    return HTTP.post(domainUrl, reqBody, reqParams);
   }
 }
 @Component({
@@ -43,6 +43,7 @@ export class ServiceDemo2Component implements OnInit {
   getPromise: any[];
   request: any;
   otherPartsOfTheRequest: any;
+  postDomainUrl: string;
   constructor(
     // private Log: LoggerService //這邊無法使用LogService 因為沒有在這邊inject providers
     @Inject('API_URL') private apiDomain: string, // useValue
@@ -53,7 +54,7 @@ export class ServiceDemo2Component implements OnInit {
 
   ngOnInit() {
     // this.Log.debug('Service demo 2'); 這邊無法使用LogService 因為沒有在這邊inject
-
+    this.postDomainUrl = 'https://jsonplaceholder.typicode.com/posts';
     this.request = {
       method: 'POST',
       body: JSON.stringify({
@@ -96,7 +97,7 @@ export class ServiceDemo2Component implements OnInit {
     });
 
 
-    this.api.post('https://jsonplaceholder.typicode.com/posts', this.request).subscribe(res => {
+    this.api.post(this.postDomainUrl, this.request).subscribe(res => {
       console.log('res', res);
     });
 
@@ -108,12 +109,12 @@ export class ServiceDemo2Component implements OnInit {
 
     // otherPartsOfTheRequest
     this.otherPartsOfTheRequest = new OtherPartsOfTheRequest();
-    this.otherPartsOfTheRequest.setHeader(this.http, this.request, {
+    this.otherPartsOfTheRequest.setHeader(this.http, this.postDomainUrl, this.request, {
       headers: new HttpHeaders().set('Authorization', 'my-auth-token'),
     }).subscribe(res => {
     });
 
-    this.otherPartsOfTheRequest.setParams(this.http, this.request, {
+    this.otherPartsOfTheRequest.setParams(this.http, this.postDomainUrl, this.request, {
       params: new HttpParams().set('id', '3'),
     }).subscribe(res => {
     });
@@ -126,7 +127,7 @@ export class ServiceDemo2Component implements OnInit {
       });
   }
   manyRequests() {
-    const req = this.api.post('https://jsonplaceholder.typicode.com/posts', this.request);
+    const req = this.api.post(this.postDomainUrl, this.request);
     // 0 requests made - .subscribe() not called.
     req.subscribe();
     // 1 request made.
