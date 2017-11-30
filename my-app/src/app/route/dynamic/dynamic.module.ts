@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { DynamicParentComponent } from './dynamic-parent/dynamic-parent.component';
 import { DynamicChildComponent } from './dynamic-child/dynamic-child.component';
-import { ErrorPageComponent } from '../error-page/error-page.component';
+import { ErrorPageComponent } from '../share/error-page/error-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dynamic/parent', pathMatch: 'full' },

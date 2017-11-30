@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ChildParentComponent } from './child-parent/child-parent.component';
 import { Child1Component } from './child-1/child-1.component';
 import { Child2Component } from './child-2/child-2.component';
-import { ErrorPageComponent } from '../error-page/error-page.component';
+import { ErrorPageComponent } from '../share/error-page/error-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/child/parent', pathMatch: 'full' },
@@ -13,8 +13,10 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forRoot(routes, { enableTracing: true })
   ],
-  declarations: [ChildParentComponent, Child1Component, Child2Component]
+  declarations: [ChildParentComponent, Child1Component, Child2Component],
+  exports: [RouterModule]
 })
 export class ChildModule { }

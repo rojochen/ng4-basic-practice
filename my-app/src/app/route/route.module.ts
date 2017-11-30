@@ -8,6 +8,9 @@ const openHtml5Config = { provide: LocationStrategy, useClass: PathLocationStrat
 // 如果想用module 自訂base url 需要import APP_BASE_HREF from '@angular/common ， 但 index.html 有<base href="/">就會無效。
 const customBaseHref = { provide: APP_BASE_HREF, useValue: '/' };
 
+// share module
+import {ShareModule } from './share/share.module'
+
 // route module
 import { BasicModule } from './basic/basic.module';
 import { DynamicModule } from './dynamic/dynamic.module';
@@ -19,12 +22,13 @@ import { RouteService } from './service/route.service';
 @NgModule({
   imports: [
     CommonModule,
+    ShareModule,
     // BasicModule,
     // DynamicModule,
     ChildModule
   ],
   providers: [openHashConfig, RouteService],
   declarations: [],
-  exports: [DynamicModule]
+  exports: [ChildModule] // ps 記得要換route 
 })
 export class RouteModule { }
