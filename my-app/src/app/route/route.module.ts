@@ -10,15 +10,19 @@ const customBaseHref = { provide: APP_BASE_HREF, useValue: '/' };
 
 
 
+
 // route module
 import { BasicModule } from './basic/basic.module';
+
+// common route service
+import { RouteService } from './service/route.service';
 
 @NgModule({
   imports: [
     CommonModule,
     BasicModule
   ],
-  providers: [openHashConfig],
+  providers: [openHashConfig, RouteService],
   declarations: [],
   exports: [BasicModule]
 })

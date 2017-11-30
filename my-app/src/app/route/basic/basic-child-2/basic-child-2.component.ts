@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Location} from '@angular/common';
-
+import { RouteService } from '../../service/route.service';
 @Component({
   selector: 'app-basic-child-2',
   templateUrl: './basic-child-2.component.html',
@@ -8,12 +7,12 @@ import {Location} from '@angular/common';
 })
 export class BasicChild2Component implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor(private route: RouteService) { }
 
   ngOnInit() {
   }
   goBack() {
-    this.location.back();
+    this.route.goBack();
   }
 
 }
