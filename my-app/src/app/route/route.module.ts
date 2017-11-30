@@ -14,6 +14,7 @@ import { DynamicModule } from './dynamic/dynamic.module';
 // common route service
 import { RouteService } from './service/route.service';
 
+// ps 切換 route 記得把沒有用的給註解
 @NgModule({
   imports: [
     CommonModule,
