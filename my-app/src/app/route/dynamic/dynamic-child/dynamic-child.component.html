@@ -1,0 +1,11 @@
+<div>
+  <h1>Dynamic Route 介紹</h1>
+  <h2>Hello {{ id }}</h2>
+  <p>這是動態態的導頁</p>
+  <p>[routerLink] = ['parentPath', {{id}}] </p>
+  <p>routerLinkActive 告知User你在哪個頁面，在的話會在當前頁面class.list added 指定的class</p>
+  <nav>
+    <a [style.display]="'block'" routerLinkActive="active-link" routerLink="/dynamic/parent">Dynamic home!</a>
+    <a [style.display]="'block'" routerLinkActive="active-link" [routerLink]="['/dynamic/child', id]">go to Dynamic Child</a>
+  </nav>
+</div>
