@@ -15,6 +15,8 @@ import { RandomMath } from '../provider/random-math.service';
     { provide: 'UseValueByArray', useValue: ['Louis', 'Roger'] },  // useValue by Array
     { provide: 'RandomMath', useFactory: RandomMath, deps: [LoggerService] }, // useFactory
     { provide: 'LogServiceAlias', useExisting: LoggerService }, // useExisting
+    { provide: 'Louis', useValue: 'dependency one', multi: true }, // useValue multi
+    { provide: 'Louis', useValue: 'dependency two', multi: true } // useValue multi
   ]
 })
 export class ServiceDemo1Component implements OnInit {
@@ -26,7 +28,8 @@ export class ServiceDemo1Component implements OnInit {
     @Inject('UseValueByObj') private UseValueByObj: object, // useValue
     @Inject('UseValueByArray') private UseValueByArray: Array<any>, // useValue
     @Inject('RandomMath') private randomMath: number,
-    @Inject('LogServiceAlias') private logServiceAlias: LoggerService
+    @Inject('LogServiceAlias') private logServiceAlias: LoggerService,
+    @Inject('Louis') private louis // useValue multi
   ) { }
 
   ngOnInit() {
@@ -36,6 +39,7 @@ export class ServiceDemo1Component implements OnInit {
     this.Log.debug('UseValueByNumber= ' + this.UseValueByNumber);
     this.Log.debug('UseValueByObj= ' + this.UseValueByObj);
     this.Log.debug('UseValueByArray= ' + this.UseValueByArray);
+    this.Log.debug('Louis= ' + this.louis[0]);
     this.logServiceAlias.debug('logServiceAlias');
   }
 
