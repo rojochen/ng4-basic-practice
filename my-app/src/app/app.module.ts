@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RoutingModule } from './routing/routing.module';
 
 //component
 import { AppComponent } from './app.component';
@@ -65,7 +64,7 @@ import { TimingInterceptorService } from './provide/timing-interceptor.service';
     ServiceDemo2Component
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RoutingModule
+    BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule
   ],
   providers: [
     {
