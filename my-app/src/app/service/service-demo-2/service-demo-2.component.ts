@@ -11,7 +11,7 @@ interface ItemsResponse {
   title: string;
   body: string;
 }
-class ItemResClass {
+interface ItemResClass {
   userId: number;
   id: number;
   title: string;
