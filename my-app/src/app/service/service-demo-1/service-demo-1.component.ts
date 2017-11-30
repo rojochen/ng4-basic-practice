@@ -12,6 +12,7 @@ import { RandomMath } from '../provider/random-math.service';
     { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com' },  // useValue by srting
     { provide: 'UseValueByNumber', useValue: 10 },  // useValue by number
     { provide: 'UseValueByObj', useValue: { name: 'object' } },  // useValue by {}
+    { provide: 'UseValueByArray', useValue: ['Louis', 'Roger'] },  // useValue by Array
     { provide: 'RandomMath', useFactory: RandomMath, deps: [LoggerService] }, // useFactory
     { provide: 'LogServiceAlias', useExisting: LoggerService }, // useExisting
   ]
@@ -23,6 +24,7 @@ export class ServiceDemo1Component implements OnInit {
     @Inject('API_URL') private apiDomain: string, // useValue
     @Inject('UseValueByNumber') private UseValueByNumber: number, // useValue
     @Inject('UseValueByObj') private UseValueByObj: object, // useValue
+    @Inject('UseValueByArray') private UseValueByArray: Array<any>, // useValue
     @Inject('RandomMath') private randomMath: number,
     @Inject('LogServiceAlias') private logServiceAlias: LoggerService
   ) { }
@@ -33,6 +35,7 @@ export class ServiceDemo1Component implements OnInit {
     this.Log.debug('apiDomain= ' + this.apiDomain);
     this.Log.debug('UseValueByNumber= ' + this.UseValueByNumber);
     this.Log.debug('UseValueByObj= ' + this.UseValueByObj);
+    this.Log.debug('UseValueByArray= ' + this.UseValueByArray);
     this.logServiceAlias.debug('logServiceAlias');
   }
 
