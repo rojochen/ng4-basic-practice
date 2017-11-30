@@ -22,11 +22,11 @@ import { RouteService } from './service/route.service';
   imports: [
     CommonModule,
     ShareModule,
-    // BasicModule,
-    // DynamicModule
+    BasicModule,
+    DynamicModule
   ],
   providers: [openHashConfig, RouteService],
   declarations: [],
-  exports: [BasicModule] // ps 記得要換route
+  exports: [BasicModule, DynamicModule] // ps 記得要換route
 })
 export class RouteModule { }

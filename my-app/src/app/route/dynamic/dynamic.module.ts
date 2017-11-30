@@ -6,7 +6,7 @@ import { DynamicChildComponent } from './dynamic-child/dynamic-child.component';
 import { ErrorPageComponent } from '../share/error-page/error-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dynamic/parent', pathMatch: 'full' },
+  // { path: '', redirectTo: '/dynamic/parent', pathMatch: 'full' },
   { path: 'dynamic/parent', component: DynamicParentComponent },
   { path: 'dynamic/child/:id', component: DynamicChildComponent },
   { path: '**', component: ErrorPageComponent }

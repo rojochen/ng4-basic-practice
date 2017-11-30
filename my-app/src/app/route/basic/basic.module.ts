@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/basic/parent', pathMatch: 'full' },
   { path: 'basic/parent', component: BasicParentComponent },
   { path: 'basic/child1', component: BasicChild1Component },
-  { path: 'basic/child2', component: BasicChild2Component },
-  { path: '**', component: ErrorPageComponent }
+  { path: 'basic/child2', component: BasicChild2Component }
+  // { path: '**', component: ErrorPageComponent }
 ];
 
 @NgModule({
