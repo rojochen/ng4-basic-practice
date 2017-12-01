@@ -21,6 +21,7 @@ import { RandomMath } from '../provider/random-math.service';
 })
 export class ServiceDemo1Component implements OnInit {
   title: string;
+  apiUlr: string;
   constructor(
     private Log: LoggerService,
     @Inject('API_URL') private apiDomain: string, // useValue
@@ -33,6 +34,7 @@ export class ServiceDemo1Component implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.apiUlr = this.apiDomain;
     this.title = 'Service inject demo';
     this.Log.debug(this.title);
     this.Log.debug('apiDomain= ' + this.apiDomain);
