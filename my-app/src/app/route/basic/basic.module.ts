@@ -4,14 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { BasicParentComponent } from './basic-parent/basic-parent.component';
 import { BasicChild1Component } from './basic-child-1/basic-child-1.component';
 import { BasicChild2Component } from './basic-child-2/basic-child-2.component';
-import { ErrorPageComponent } from '../share/error-page/error-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/basic/parent', pathMatch: 'full' },
   { path: 'basic/parent', component: BasicParentComponent },
   { path: 'basic/child1', component: BasicChild1Component },
   { path: 'basic/child2', component: BasicChild2Component }
-  // { path: '**', component: ErrorPageComponent }
 ];
 
 @NgModule({
