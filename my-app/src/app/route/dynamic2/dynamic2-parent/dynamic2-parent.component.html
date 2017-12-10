@@ -1,0 +1,6 @@
+<p>
+  dynamic2-parent works!
+</p>
+<ul>
+  <li *ngFor="let mem of memberList; trackBy: trackByIndex;let i = index" (click)="jumpToMemberInfoPage(mem.id)">{{mem.name}}</li>
+</ul>
