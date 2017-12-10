@@ -12,7 +12,7 @@ import { ComponentDemo3Component } from './component/component-demo-3/component-
 import { ComponentDemo4Component } from './component/component-demo-4/component-demo-4.component';
 import { HighlightDirective } from './directive//highlight.directive';
 import { Highlight2Directive } from './directive//highlight2.directive';
-import { AppCollarDirective } from './app-collar.directive';
+import { AppCollarDirective } from './directive/app-collar.directive';
 import { DelayDirective } from './directive/delay.directive';
 import { DirectiveDemo1Component } from './directive/directive-demo-1/directive-demo-1.component';
 import { DirectiveDemo2Component } from './directive/directive-demo-2/directive-demo-2.component';

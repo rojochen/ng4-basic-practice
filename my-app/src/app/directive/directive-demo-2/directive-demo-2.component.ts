@@ -15,6 +15,7 @@ export class DirectiveDemo2Component implements OnInit {
   ngOnInit() {
   }
   countChange(e) {
+    console.log('e: ', e);
     this.count = e;
   }
 
