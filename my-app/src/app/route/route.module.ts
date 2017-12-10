@@ -17,7 +17,7 @@ import { ShareModule } from './share/share.module';
 // common route service
 import { RouteService } from './service/route.service';
 
-// ps 切換 route 記得把沒有用的給註解
+
 @NgModule({
   imports: [
     CommonModule,
@@ -26,8 +26,11 @@ import { RouteService } from './service/route.service';
     Dynamic2Module,
     ShareModule
   ],
-  providers: [openHashConfig, RouteService],
+  providers: [
+    // openHashConfig, // open Hash
+    openHtml5Config, // open HTML5
+    RouteService],
   declarations: [],
-  exports: [BasicModule, DynamicModule, Dynamic2Module, ShareModule] // ps 記得要換route
+  exports: [BasicModule, DynamicModule, Dynamic2Module, ShareModule]
 })
 export class RouteModule { }
