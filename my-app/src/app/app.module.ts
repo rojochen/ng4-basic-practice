@@ -35,7 +35,7 @@ import { TimingInterceptorService } from './interceptor/timing-interceptor.servi
 
 // route module
 import { RouteModule } from './route/route.module';
-import { ServiceDemo3Component } from './service-demo-3/service-demo-3.component';
+import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.component';
 
 @NgModule({
   declarations: [
