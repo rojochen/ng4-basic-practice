@@ -17,11 +17,10 @@ import { Dynamic3Module } from './dynamic3/dynamic3.module';
 
 // common route service;
 import { RouteService } from './service/route.service';
-import { ErrorPageComponent } from './share/error-page/error-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/basic/parent', pathMatch: 'full' },
-  { path: '**', component: ErrorPageComponent }
+  { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({
@@ -37,7 +36,7 @@ const routes: Routes = [
     openHashConfig, // open Hash
     // openHtml5Dynamic3ParentComponentDynamic3ChildComponentConfig, // open HTML5
     RouteService],
-  declarations: [ErrorPageComponent],
+  declarations: [],
   exports: [RouterModule]
 })
 export class RouteModule { }
