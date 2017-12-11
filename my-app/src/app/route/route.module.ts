@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, LocationStrategy, HashLocationStrategy, PathLocationStrategy, APP_BASE_HREF } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 
 // 開啟Hash 模式需要import LocationStrategy & HashLocationStrategy from '@angular/common。
 const openHashConfig = { provide: LocationStrategy, useClass: HashLocationStrategy };
@@ -33,6 +34,6 @@ import { RouteService } from './service/route.service';
     // openHtml5Dynamic3ParentComponentDynamic3ChildComponentConfig, // open HTML5
     RouteService],
   declarations: [],
-  exports: [BasicModule, DynamicModule, Dynamic2Module, Dynamic3Module, ShareModule]
+  exports: [RouterModule]
 })
 export class RouteModule { }
