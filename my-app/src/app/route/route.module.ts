@@ -20,6 +20,7 @@ import { RouteService } from './service/route.service';
 import { ErrorPageComponent } from './share/error-page/error-page.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/basic/parent', pathMatch: 'full' },
   { path: '**', component: ErrorPageComponent }
 ];
 
