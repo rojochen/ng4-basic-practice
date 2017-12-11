@@ -12,9 +12,10 @@ const customBaseHref = { provide: APP_BASE_HREF, useValue: '/' };
 import { BasicModule } from './basic/basic.module';
 import { DynamicModule } from './dynamic/dynamic.module';
 import { Dynamic2Module } from './dynamic2/dynamic2.module';
+import { Dynamic3Module } from './dynamic3/dynamic3.module';
 // share module
 import { ShareModule } from './share/share.module';
-// common route service
+// common route service;
 import { RouteService } from './service/route.service';
 
 
@@ -24,13 +25,14 @@ import { RouteService } from './service/route.service';
     BasicModule,
     DynamicModule,
     Dynamic2Module,
+    Dynamic3Module,
     ShareModule
   ],
   providers: [
-    // openHashConfig, // open Hash
-    openHtml5Config, // open HTML5
+    openHashConfig, // open Hash
+    // openHtml5Dynamic3ParentComponentDynamic3ChildComponentConfig, // open HTML5
     RouteService],
   declarations: [],
-  exports: [BasicModule, DynamicModule, Dynamic2Module, ShareModule]
+  exports: [BasicModule, DynamicModule, Dynamic2Module, Dynamic3Module, ShareModule]
 })
 export class RouteModule { }

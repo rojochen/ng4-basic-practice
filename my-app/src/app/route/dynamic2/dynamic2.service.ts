@@ -15,8 +15,8 @@ export class Dynamic2Service {
     return this.memberList;
   }
   getMemberInfo(memberId): any {
-    return this.memberList.filter((item) => {
+    return this.memberList.find((item) => {
       return item.id === memberId;
-    })[0];
+    });
   }
 }
