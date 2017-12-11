@@ -15,7 +15,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes, { enableTracing: true })
+    RouterModule.forChild(routes)
   ],
   declarations: [BasicParentComponent, BasicChild1Component, BasicChild2Component],
   exports: [RouterModule]

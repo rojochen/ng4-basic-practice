@@ -14,11 +14,14 @@ import { BasicModule } from './basic/basic.module';
 import { DynamicModule } from './dynamic/dynamic.module';
 import { Dynamic2Module } from './dynamic2/dynamic2.module';
 import { Dynamic3Module } from './dynamic3/dynamic3.module';
-// share module
-import { ShareModule } from './share/share.module';
+
 // common route service;
 import { RouteService } from './service/route.service';
+import { ErrorPageComponent } from './share/error-page/error-page.component';
 
+const routes: Routes = [
+  { path: '**', component: ErrorPageComponent }
+];
 
 @NgModule({
   imports: [
@@ -27,7 +30,7 @@ import { RouteService } from './service/route.service';
     DynamicModule,
     Dynamic2Module,
     Dynamic3Module,
-    ShareModule
+    RouterModule.forRoot(routes, { enableTracing: true })
   ],
   providers: [
     openHashConfig, // open Hash
