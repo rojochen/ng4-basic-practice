@@ -36,7 +36,7 @@ const routes: Routes = [
     openHashConfig, // open Hash
     // openHtml5Dynamic3ParentComponentDynamic3ChildComponentConfig, // open HTML5
     RouteService],
-  declarations: [],
+  declarations: [ErrorPageComponent],
   exports: [RouterModule]
 })
 export class RouteModule { }
