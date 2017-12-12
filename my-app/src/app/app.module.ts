@@ -1,3 +1,4 @@
+import { ComponentModule } from './component/component.modules';
 // module
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -6,10 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 //component
 import { AppComponent } from './app.component';
-import { ComponentDemo1Component } from './component/component-demo-1/component-demo-1.component';
-import { ComponentDemo2Component } from './component/component-demo-2/component-demo-2.component';
-import { ComponentDemo3Component } from './component/component-demo-3/component-demo-3.component';
-import { ComponentDemo4Component } from './component/component-demo-4/component-demo-4.component';
+// import { ComponentDemo1Component } from './component/component-demo-1/component-demo-1.component';
+// import { ComponentDemo2Component } from './component/component-demo-2/component-demo-2.component';
+// import { ComponentDemo3Component } from './component/component-demo-3/component-demo-3.component';
+// import { ComponentDemo4Component } from './component/component-demo-4/component-demo-4.component';
 import { HighlightDirective } from './directive//highlight.directive';
 import { Highlight2Directive } from './directive//highlight2.directive';
 import { AppCollarDirective } from './directive/app-collar.directive';
@@ -40,10 +41,6 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
 @NgModule({
   declarations: [
     AppComponent,
-    ComponentDemo1Component,
-    ComponentDemo2Component,
-    ComponentDemo3Component,
-    ComponentDemo4Component,
     HighlightDirective,
     Highlight2Directive,
     AppCollarDirective,
@@ -68,7 +65,8 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouteModule
+    RouteModule,
+    ComponentModule
   ],
   providers: [
     {
