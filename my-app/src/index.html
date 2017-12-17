@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <title>MyApp</title>
   <base href="/">
-
+  <!--
+    路由需要根據<base> 標籤這個來確定應用程序的根目錄。
+    例如，存取http://example.com/page1 時，如果沒有定義應用程序的基礎路徑，路由將無法知道的應用的託管地址是http://example.com 還是http:// example.com/page1 。預設都是根目錄”/”
+  -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>

@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { ComponentDemo1Component } from './component-demo-1/component-demo-1.component';
 import { ComponentDemo2Component } from './component-demo-2/component-demo-2.component';
 import { ComponentDemo4Component } from './component-demo-4/component-demo-4.component';
+
 @NgModule({
     imports: [
         CommonModule,
