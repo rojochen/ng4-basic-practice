@@ -6,10 +6,11 @@ import { Observable } from 'rxjs/Observable';
 export class ApiInterceptorService implements HttpInterceptor {
 
   constructor() { }
+  // HttpRequest 請求URL，header etc.
+  // HttpHandler 處理攔截
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    //表頭塞token  HHH
+    //header set  Authorization token
     const authReq = req.clone({headers: req.headers.set('Authorization', 'my-auth-token')});
-    console.log('authReq: ', authReq);
     return next.handle(authReq);
   }
 }
