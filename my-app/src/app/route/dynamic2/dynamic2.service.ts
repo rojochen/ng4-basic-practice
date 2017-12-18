@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 export class Dynamic2Service {
   memberList = [{
     id: '1',
-    name: 'Louis'
+    name: 'Jason'
   }, {
     id: '2',
-    name: 'Rojo'
+    name: 'Max'
   }];
   constructor() { }
   getMemberList() {

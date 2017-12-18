@@ -2,11 +2,11 @@ import { Injectable, Inject } from '@angular/core';
 import { ISendable } from '../interfaces/isendable';
 @Injectable()
 export class NotificationService {
-  smsService: ISendable = null;
-  constructor( @Inject('ISendable')smsService: ISendable) {
-      this.smsService = smsService;
+  sender: ISendable = null;
+  constructor( @Inject('ISendable')sender: ISendable) {
+      this.sender = sender;
   }
   showMessage(): string {
-    return this.smsService.sendMessage();
+    return this.sender.sendMessage();
   }
 }

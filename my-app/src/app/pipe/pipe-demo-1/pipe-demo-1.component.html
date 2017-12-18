@@ -15,8 +15,8 @@
   {{value | lastnameUppercase}}
 </div>
 <div>
-    <input type="number" name="" [(ngModel)]="searchNum">
-    <ul>
-      <li *ngFor=" let list of (numberList | filterNumber: searchNum)">{{list}}</li>
-    </ul>
-  </div>
+  <input type="number" name="" [(ngModel)]="searchNum">
+  <ul>
+    <li *ngFor=" let list of (numberList | filterNumber: searchNum)">{{list}}</li>
+  </ul>
+</div>

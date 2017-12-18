@@ -7,7 +7,8 @@ export class ApiInterceptorService implements HttpInterceptor {
 
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const authReq = req.clone({headers:  req.headers.set('Authorization', 'my-auth-token')});
+    //表頭塞token
+    const authReq = req.clone({headers: req.headers.set('Authorization', 'my-auth-token')});
     console.log('authReq: ', authReq);
     return next.handle(authReq);
   }
