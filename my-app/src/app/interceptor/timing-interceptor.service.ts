@@ -13,7 +13,8 @@ export class TimingInterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const started = Date.now();
     return next.handle(req).do(e => {
-      //處理response
+      // 處理response
+      // 判斷 e 是否跟 HttpResponse 相同
       if (e instanceof HttpResponse) {
         const elapsed = Date.now() - started;
         console.error(`Request for ${req.urlWithParams} took ${elapsed} ms.`);
