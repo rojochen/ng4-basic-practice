@@ -10,10 +10,8 @@ import { ComponentDemo1Component } from './component/component-demo-1/component-
 import { ComponentDemo2Component } from './component/component-demo-2/component-demo-2.component';
 import { ComponentDemo3Component } from './component/component-demo-3/component-demo-3.component';
 import { ComponentDemo4Component } from './component/component-demo-4/component-demo-4.component';
-import { HighlightDirective } from './directive//highlight.directive';
-import { Highlight2Directive } from './directive//highlight2.directive';
-import { AppCollarDirective } from './directive/app-collar.directive';
-import { DelayDirective } from './directive/delay.directive';
+
+
 import { DirectiveDemo1Component } from './directive/directive-demo-1/directive-demo-1.component';
 import { DirectiveDemo2Component } from './directive/directive-demo-2/directive-demo-2.component';
 import { DirectiveDemo3Component } from './directive/directive-demo-3/directive-demo-3.component';
@@ -28,6 +26,12 @@ import { ServiceDemo1Component } from './service/service-demo-1/service-demo-1.c
 import { ServiceDemo2Component } from './service/service-demo-2/service-demo-2.component';
 import { ServiceDiComponent } from './service-di/service-di.component';
 
+// directive
+import { DelayDirective } from './directive/delay.directive';
+import { HighlightDirective } from './directive//highlight.directive';
+import { AppCollarDirective } from './directive/app-collar.directive';
+import { RanDomColorDirective } from './directive/ran-dom-color.directive';
+
 // global service
 import { ApiInterceptorService } from './interceptor/api-interceptor.service';
 import { TimingInterceptorService } from './interceptor/timing-interceptor.service';
@@ -37,6 +41,7 @@ import { TimingInterceptorService } from './interceptor/timing-interceptor.servi
 import { RouteModule } from './route/route.module';
 import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +50,6 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
     ComponentDemo3Component,
     ComponentDemo4Component,
     HighlightDirective,
-    Highlight2Directive,
     AppCollarDirective,
     DelayDirective,
     DirectiveDemo1Component,
@@ -61,7 +65,8 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
     ServiceDiComponent,
     ServiceDemo1Component,
     ServiceDemo2Component,
-    ServiceDemo3Component
+    ServiceDemo3Component,
+    RanDomColorDirective
   ],
   imports: [
     BrowserModule,

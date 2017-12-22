@@ -22,18 +22,23 @@ export class HighlightDirective {
   
   constructor(private el: ElementRef) { }
 
-  @Input() defaultColor: string;
-  @Input('appHighlight') highlightColor: string;
+  @Input() defaultColor: string; // 沒有指定將預設跑這一個取得父值
+  @Input('appHighlight') highlightColor: string; // 指定[appHighlight] 接收父傳來的值
+
+  // HostBinding 是屬性裝飾器，用來動態設置宿主元素的屬性值。
   @HostBinding('style.color') color: string;
+
+  // 監聽onMouseEnter 事件
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight(this.highlightColor || this.defaultColor || 'red');
   }
 
+  // 監聽 mouseleave 事件
   @HostListener('mouseleave') onMouseLeave() {
     this.highlight(null);
   }
 
-  private highlight(color: string) {
+   highlight(color: string) {
     this.el.nativeElement.style.backgroundColor = color;
   }
 }

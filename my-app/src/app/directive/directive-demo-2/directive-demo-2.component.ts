@@ -9,11 +9,13 @@ export class DirectiveDemo2Component implements OnInit {
   color: string;
   count: number;
   constructor() {
-    this.count = 0;
+    
   }
 
   ngOnInit() {
+    this.count = 0;
   }
+  // 當 子組件發送event，父組件接收後會執行countChange
   countChange(e) {
     console.log('e: ', e);
     this.count = e;
