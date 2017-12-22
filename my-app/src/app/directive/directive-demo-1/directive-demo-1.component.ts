@@ -45,16 +45,19 @@ export class DirectiveDemo1Component implements OnInit {
       name: 'Louis'
     }];
   }
+  // ng1.x 的 track by index
   trackByIndex(index, item) {
     return index;
   }
+  // ng1.x 的 track by value.id
   trackByMemberId(index, item) {
     return item.id;
   }
-
+  // *ngIf 用 func 判斷
   validationFun() {
     return true;
   }
+  // select on changed 會觸發的 func
   selectChange(e) {
     console.log('e: ', e);
   }

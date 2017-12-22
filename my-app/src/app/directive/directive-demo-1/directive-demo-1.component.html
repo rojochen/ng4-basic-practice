@@ -13,7 +13,7 @@
     {{title}}
     <span [hidden]="isUnchanged">changed</span>
   </div>
-  
+
   <p>Bind button disabled state to `isUnchanged` property</p>
   <button [disabled]="isUnchanged">Button is disabled</button>
   <button bind-disabled="isUnchanged">Disabled Cancel</button>
@@ -59,6 +59,7 @@
   <div [ngStyle]="{color: 'white', 'background-color': 'blue'}">Uses fixed white text on blue background</div>
 </div>
 <div class="content">
+  <!-- angular 2 plus *ngIf範例 -->
   <p>*ngIf</p>
   <p *ngIf="bigNum > smallNum">數字大小判斷</p>
   <p *ngIf="isString === 'str'">字串判斷</p>
@@ -79,6 +80,7 @@
 </div>
 <div class="content" [ngSwitch]="myVar">
   <p>ngSwitch</p>
+  <!-- angular2 plus swtich case directive -->
   <div *ngSwitchCase="'A'">Var is A</div>
   <div *ngSwitchCase="'B'">Var is B</div>
   <div *ngSwitchCase="'C'">Var is C</div>
@@ -86,12 +88,14 @@
 </div>
 <div class="content">
   <p>*ngFor</p>
+  <!-- ng1.x 的 ng-repeat -->
   <div *ngFor="let member of getMember()">
     <span>ID: {{member.id}}</span>
     <span>Name: {{ member.name}}</span>
   </div>
   <hr>
   <p>*ngFor track by index</p>
+  <!-- // ng1.x 的 track by index -->
   <div *ngFor="let member of getMember();trackBy: trackByIndex;let i = index">
     <span>Idx: {{ i }}</span>
     <span>ID: {{member.id}}</span>
@@ -99,25 +103,33 @@
   </div>
 
   <p>*ngFor track by Member ID</p>
+  <!-- // ng1.x 的 track by value.id -->
   <div *ngFor="let member of getMember();trackBy: trackByMemberId;">
     <span>ID: {{member.id}}</span>
     <span>Name: {{ member.name}}</span>
   </div>
 
   <p>select use *ngFor</p>
+  <!-- (change) 類似於 ng1.x ngChange -->
   <select (change)="selectChange($event)">
     <option *ngFor="let member of getMember();trackBy: trackByIndex;" [value]="member.id" [innerHTML]="member.name"></option>
   </select>
 
   <p>*ngFor and *ngIf</p>
+  <!-- ng-container 既不是一個 Component，也不是一個 Directive，只是單純的一個特殊 tag。 這點類似於 template，Angular 復用了 HTML5 規範中 template tag 的語義，不過並沒有真正利用其實現，因此在審查元素中是永遠也找不到一個
+  template 元素的。 -->
+   <!-- ng1.x 在 directive 上有優先處理之分，在ng2 plus後就沒有這個機制，所以當Dom上有 *ngFor and *ngIf 他會不知道誰會優先處理，這時候就會需要 ng-container -->
 
   <ng-container *ngFor="let member of getMember();trackBy: trackByIndex;">
     <p *ngIf="member.id !== 1" [innerHTML]="member.name"></p>
   </ng-container>
 
 </div>
+
+<!-- 類似於 ng1.x的 ng-included -->
 <ng-template>
   HELLO TEMPLATE
 </ng-template>
 
- 
+
+<!-- hidde vs hidden 差異 參考連結  https://blog.johnwu.cc/article/angular-4-ngif-vs-hidden.html -->
