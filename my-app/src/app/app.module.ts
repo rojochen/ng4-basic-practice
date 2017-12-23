@@ -28,7 +28,7 @@ import { ServiceDiComponent } from './service-di/service-di.component';
 // directive
 import { DelayDirective } from './directive/delay.directive';
 import { HighlightDirective } from './directive//highlight.directive';
-import { AppCollarDirective } from './directive/app-collar.directive';
+import { CollarDirective } from './directive/collar.directive';
 import { RanDomColorDirective } from './directive/ran-dom-color.directive';
 
 // global service
@@ -49,7 +49,6 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
     ComponentDemo3Component,
     ComponentDemo4Component,
     HighlightDirective,
-    AppCollarDirective,
     DelayDirective,
     DirectiveDemo1Component,
     DirectiveDemo2Component,
@@ -64,7 +63,8 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
     ServiceDemo1Component,
     ServiceDemo2Component,
     ServiceDemo3Component,
-    RanDomColorDirective
+    RanDomColorDirective,
+    CollarDirective
   ],
   imports: [
     BrowserModule,
