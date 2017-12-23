@@ -19,6 +19,7 @@ export class Dynamic2ParentComponent implements OnInit {
   trackByIndex(index, item) {
     return index;
   }
+  // 使用navigate()方法來導頁
   jumpToMemberInfoPage(memId) {
     this.router.navigate(['/dynamic2/child', memId]);
   }

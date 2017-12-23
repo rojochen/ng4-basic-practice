@@ -5,9 +5,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './dynamic3-parent.component.html',
   styleUrls: ['./dynamic3-parent.component.css']
 })
-export class Dynamic3ParentComponent implements OnInit {
+export class Dynamic3ParentComponent implements OnInit, OnDestroy {
   pageId: string;
-  sub:any;
+  sub: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router
