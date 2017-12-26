@@ -11,11 +11,6 @@ export class ComponentDemo1Component implements OnInit {
   imgUrl: string;
   heroInput: string;
   constructor() {
-    this.name = 'roger';
-    this.heroInput = 'Heloow';
-    this.values = '';
-    // tslint:disable-next-line:max-line-length
-    this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
   }
   init(): void {
     console.log('hello');
@@ -30,6 +25,10 @@ export class ComponentDemo1Component implements OnInit {
     alert(phone);
   }
   ngOnInit() {
+    this.name = 'roger';
+    this.heroInput = 'Heloow';
+    this.values = '';
+    this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
   }
   keyup(value: string): void {
    this.values =  this.values + value;

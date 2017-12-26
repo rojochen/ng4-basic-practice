@@ -10,8 +10,6 @@ export class ComponentDemo2Component implements OnInit {
   textPlaceholder: string;
   textReadonly: boolean;
   constructor() {
-    this.disabledValue = false;
-    this.textPlaceholder = '';
   }
   init() {
     this.disabledValue = true;
@@ -33,6 +31,8 @@ export class ComponentDemo2Component implements OnInit {
     console.log(event);
   }
   ngOnInit() {
+    this.disabledValue = false;
+    this.textPlaceholder = '';
   }
 
 }

@@ -15,13 +15,6 @@ export class ComponentDemo3Component implements OnInit {
   boxValue1: string;
   boxList: Array<{ selected: boolean; value: string }>;
   constructor() {
-    this.oneWayValue = '';
-    this.selectValue = 'angular';
-    this.twoWayValue = '';
-    this.boxList = [];
-    this.boxList.push({selected: false, value: 'angular'});
-    this.boxList.push({selected: false, value: 'react'});
-    this.boxList.push({selected: false, value: 'vue'});
   }
   input(event) {
     this.oneWayValue = event.target.value;
@@ -30,6 +23,13 @@ export class ComponentDemo3Component implements OnInit {
     console.log(this.twoWayValue );
   }
   ngOnInit() {
+    this.oneWayValue = '';
+    this.selectValue = 'angular';
+    this.twoWayValue = '';
+    this.boxList = [];
+    this.boxList.push({selected: false, value: 'angular'});
+    this.boxList.push({selected: false, value: 'react'});
+    this.boxList.push({selected: false, value: 'vue'});
   }
 
 }
