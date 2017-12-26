@@ -7,11 +7,12 @@ import { LoggerService } from '../provider/logger.service';
 })
 export class ServiceDemo3Component implements OnInit {
   @Input() apiUrl: string;
-  
+
   constructor(private Log: LoggerService) { }
 
   ngOnInit() {
-    this.Log.error('apiUrl: ' + this.apiUrl);
+    this.apiUrl = this.apiUrl || '';
+    this.Log.error('service-demo-3 apiUrl: ' + this.apiUrl);
   }
 
 }

@@ -19,9 +19,13 @@ import { Dynamic3Module } from './dynamic3/dynamic3.module';
 import { RouteService } from './service/route.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/basic/parent', pathMatch: 'full' },
-  { path: '**', redirectTo: '/404' }
+  { path: '', redirectTo: '/basic/parent', pathMatch: 'full' }, // 預設頁面
+  { path: '**', redirectTo: '/404' } // erro page
 ];
+
+// 只有RootRoute才可以設定的config
+// enableTracing route debug 模式
+const RootRouteSettingConfig = { enableTracing: true };
 
 @NgModule({
   imports: [
@@ -30,7 +34,10 @@ const routes: Routes = [
     DynamicModule,
     Dynamic2Module,
     Dynamic3Module,
-    RouterModule.forRoot(routes, { enableTracing: true })
+    RouterModule.forRoot(
+      routes,
+      RootRouteSettingConfig
+    )
   ],
   providers: [
     openHashConfig, // open Hash
