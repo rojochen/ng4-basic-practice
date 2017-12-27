@@ -9,10 +9,9 @@ import { NgForm } from '@angular/forms';
 export class ComponentDemo4Component implements OnInit {
   name: string;
   constructor() { }
+  ngOnInit() {
+  }
   setValue() {
     this.name = 'Nancy';
   }
-  ngOnInit() {
-  }
-
 }

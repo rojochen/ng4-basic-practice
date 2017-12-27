@@ -12,6 +12,12 @@ export class ComponentDemo1Component implements OnInit {
   heroInput: string;
   constructor() {
   }
+  ngOnInit() {
+    this.name = 'roger';
+    this.heroInput = 'Heloow';
+    this.values = '';
+    this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
+  }
   init(): void {
     console.log('hello');
   }
@@ -24,20 +30,11 @@ export class ComponentDemo1Component implements OnInit {
   call(phone: string): void {
     alert(phone);
   }
-  ngOnInit() {
-    this.name = 'roger';
-    this.heroInput = 'Heloow';
-    this.values = '';
-    this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
-  }
+
   keyup(value: string): void {
-   this.values =  this.values + value;
+    this.values = this.values + value;
   }
   say(): void {
     alert('Hello World');
   }
-  myFunction(): void {
-    alert('copy text');
-  }
-
 }

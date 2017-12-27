@@ -26,7 +26,6 @@ import { ServiceDemo2Component } from './service/service-demo-2/service-demo-2.c
 import { ServiceDiComponent } from './service-di/service-di.component';
 
 // directive
-import { DelayDirective } from './directive/delay.directive';
 import { HighlightDirective } from './directive//highlight.directive';
 import { CollarDirective } from './directive/collar.directive';
 import { RanDomColorDirective } from './directive/ran-dom-color.directive';
@@ -49,7 +48,6 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
     ComponentDemo3Component,
     ComponentDemo4Component,
     HighlightDirective,
-    DelayDirective,
     DirectiveDemo1Component,
     DirectiveDemo2Component,
     LastnameUppercasePipe,

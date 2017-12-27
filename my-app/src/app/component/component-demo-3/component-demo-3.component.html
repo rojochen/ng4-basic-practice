@@ -3,32 +3,41 @@
 </p>
 <p>
   <!--one way implement -->
-  one way:<input type="text" [value]="oneWayValue" (input)="input($event)" /><span>{{oneWayValue}}</span><br/>
+  one way:
+  <input type="text" [value]="oneWayValue" (input)="input($event)" />
+  <span>{{oneWayValue}}</span>
+  <br/>
   <!--two way implement : Banana in a Box -->
-  two way(Banana in a Box): <input type="text" [(ngModel)]="twoWayValue" (ngModelChange)="log()"  /><span>{{twoWayValue}}</span><br/>
-  bindon: <input type="text" bindon-ngModel="twoWayValue1" (ngModelChange)="log()"  /><span>{{twoWayValue1}}</span><br/>
-  
-  <!--demo select -->
-  <select name="" [(ngModel)]="selectValue" >
-    <option  value="angular">Angular</option>
-    <option  value="react">React</option>
-    <option  value="Vue">Vue</option>
-  </select>
-  <span>{{selectValue}}</span><br/>
-  <input type="radio" id="contactChoice1"
-  name="contact" [(ngModel)]="radioValue" value="email">
- <label for="contactChoice1">Email</label>
+  two way(Banana in a Box):
+  <input type="text" [(ngModel)]="twoWayValue" (ngModelChange)="log()" />
+  <span>{{twoWayValue}}</span>
+  <br/> bindon:
+  <input type="text" bindon-ngModel="twoWayValue1" (ngModelChange)="log()" />
+  <span>{{twoWayValue1}}</span>
+  <br/>
 
- <input type="radio" id="contactChoice2"
-  name="contact" [(ngModel)]="radioValue" value="phone">
- <label for="contactChoice2">Phone</label>
- <span>{{radioValue}}</span><br/>
- 
- <input type="checkbox" id="box1" name="subscribe"  [(ngModel)]="boxList[0].selected" >
- <label for="box1">{{boxList[0].value}}</label>
- <input type="checkbox" id="box2" name="subscribe2"  [(ngModel)]="boxList[1].selected"  >
- <label for="box2">{{boxList[1].value}}</label>
- <input type="checkbox" id="box3" name="subscribe3"  [(ngModel)]="boxList[2].selected"  >
- <label for="box3">{{boxList[2].value}}</label>
- <span>{{boxValue1}}</span>
+  <!--demo select -->
+  <select name="" [(ngModel)]="selectValue">
+    <option value="angular">Angular</option>
+    <option value="react">React</option>
+    <option value="Vue">Vue</option>
+  </select>
+  <span>{{selectValue}}</span>
+  <br/>
+  <!-- radio by ngModel -->
+  <input type="radio" id="contactChoice1" name="contact" [(ngModel)]="radioValue" value="email">
+  <label for="contactChoice1">Email</label>
+
+  <input type="radio" id="contactChoice2" name="contact" [(ngModel)]="radioValue" value="phone">
+  <label for="contactChoice2">Phone</label>
+  <span>{{radioValue}}</span>
+  <br/>
+  <!-- checkbox by ngModel -->
+  <input type="checkbox" id="box1" name="subscribe" [(ngModel)]="boxList[0].selected">
+  <label for="box1">{{boxList[0].value}}</label>
+  <input type="checkbox" id="box2" name="subscribe2" [(ngModel)]="boxList[1].selected">
+  <label for="box2">{{boxList[1].value}}</label>
+  <input type="checkbox" id="box3" name="subscribe3" [(ngModel)]="boxList[2].selected">
+  <label for="box3">{{boxList[2].value}}</label>
+  <span>{{boxValue1}}</span>
 </p>

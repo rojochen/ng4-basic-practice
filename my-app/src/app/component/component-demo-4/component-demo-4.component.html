@@ -1,7 +1,8 @@
-<p>
-  <input [(ngModel)]="name" #ctrl="ngModel" required>    
-  <span>Value: {{ name }}</span>
-  <span>Valid: {{ ctrl.valid }}</span>
+<p>two way</p>
+<div>
+  <input [(ngModel)]="name" #ctrl="ngModel" required>
+  <div>Value: {{ name }}</div>
+  <div>Valid: {{ ctrl.valid }}</div>
   <button (click)="setValue()">Set value</button>
-</p>
+</div>
 {{ctrl.value}}

@@ -11,28 +11,30 @@ export class ComponentDemo2Component implements OnInit {
   textReadonly: boolean;
   constructor() {
   }
-  init() {
-    this.disabledValue = true;
-    console.log('init ');
-  }
-  isDisalbed(): boolean {
-    return this.disabledValue;
-  }
-  changeReadonly(): void {
-    this.textReadonly = true;
-  }
-  appendPlaceholder(): void {
-    this.textPlaceholder = 'input phone number';
-  }
-  changeDisable(): void {
-    this.disabledValue = !this.disabledValue;
-  }
-  consoleEvent(event: Event): void {
-    console.log(event);
-  }
   ngOnInit() {
     this.disabledValue = false;
     this.textPlaceholder = '';
   }
+
+  isDisalbed(): boolean {
+    return this.disabledValue;
+  }
+  // 切換 input readony
+  changeReadonly(): void {
+    this.textReadonly = !this.textReadonly;
+  }
+  // input added Placeholder
+  appendPlaceholder(): void {
+    this.textPlaceholder = 'input phone number';
+  }
+  // button change disabled
+  changeDisable(): void {
+    this.disabledValue = !this.disabledValue;
+  }
+  // show dom log
+  consoleEvent(event: Event): void {
+    console.log(event);
+  }
+
 
 }

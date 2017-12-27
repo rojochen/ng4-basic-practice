@@ -7,29 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ComponentDemo3Component implements OnInit {
-  oneWayValue: string ;
-  selectValue: string ;
-  twoWayValue: string ;
-  twoWayValue1: string ;
+  oneWayValue: string;
+  selectValue: string;
+  twoWayValue: string;
+  twoWayValue1: string;
   radioValue: string;
   boxValue1: string;
   boxList: Array<{ selected: boolean; value: string }>;
   constructor() {
-  }
-  input(event) {
-    this.oneWayValue = event.target.value;
-  }
-  log() {
-    console.log(this.twoWayValue );
   }
   ngOnInit() {
     this.oneWayValue = '';
     this.selectValue = 'angular';
     this.twoWayValue = '';
     this.boxList = [];
-    this.boxList.push({selected: false, value: 'angular'});
-    this.boxList.push({selected: false, value: 'react'});
-    this.boxList.push({selected: false, value: 'vue'});
+    this.boxList.push({ selected: false, value: 'angular' });
+    this.boxList.push({ selected: false, value: 'react' });
+    this.boxList.push({ selected: false, value: 'vue' });
   }
-
+  // get input value
+  input(event) {
+    this.oneWayValue = event.target.value;
+  }
+  log() {
+    console.log(this.twoWayValue);
+  }
 }

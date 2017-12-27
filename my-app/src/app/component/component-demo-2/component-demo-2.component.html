@@ -1,18 +1,18 @@
-<p>
+<div>
   <!--
     placeholder="{{textPlaceholder}}"
     [placeholder]="textPlaceholder"
     [placeholder]="{{textPlaceholder}}" 這個會有問題
   -->
-  <button [disabled]="disabledValue">Property binding</button>
-  <button (click)="changeDisable()">Disabled</button>
-</p>
-<p>
-  <input  type="text" name="" id="myText"  placeholder="{{textPlaceholder}}" [readonly]="textReadonly">
-  <button on-click="appendPlaceholder()" >append placeholder</button>  
-  <button (click)="changeReadonly()" >readonly</button>
-</p>
-<p>
+  <button [disabled]="disabledValue">Property binding [disabled]</button>
+  <button (click)="changeDisable()">click event changeDisable()</button>
+</div>
+<div>
+  <input type="text" name="" id="myText" placeholder="{{textPlaceholder}}" [readonly]="textReadonly">
+  <button on-click="appendPlaceholder()">append placeholder</button>
+  <button (click)="changeReadonly()">input chnaged readonly</button>
+</div>
+<div>
   <!--不太建議的寫法,例用事件操作dom元素。-->
   <button on-click="consoleEvent($event)">Console event</button>
-</p>
+</div>

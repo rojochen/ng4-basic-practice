@@ -11,6 +11,7 @@ export class RanDomColorDirective {
     'darksalmon', 'hotpink', 'lightskyblue', 'goldenrod', 'peachpuff',
     'mediumspringgreen', 'cornflowerblue', 'blanchedalmond', 'lightslategrey'
   ];
+  // 取得dom 元素
   @HostBinding('style.color') color: string;
   @HostBinding('style.border-color') borderColor: string;
 
