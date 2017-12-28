@@ -11,7 +11,7 @@ export class PipeDemo1Component implements OnInit {
   value: string;
   object: Object = { foo: 'bar', baz: 'qux', nested: { xyz: 3, numbers: [1, 2, 3, 4, 5] } };
   numberList: Array<number> = [];
-  searchNum: Number;
+  searchNum: number;
   constructor() {
   }
   ngOnInit() {

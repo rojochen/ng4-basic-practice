@@ -15,7 +15,7 @@ export class FormDemo2Component implements OnInit {
   onSubmit(f: NgForm) {
     console.log(f.value);  // { first: '', last: '' }
     console.log(f.valid);  // false
-    if (f.valid === true) {
+    if (!!f.valid) {
       // do something
       alert('表單檢核成功!');
     } else {

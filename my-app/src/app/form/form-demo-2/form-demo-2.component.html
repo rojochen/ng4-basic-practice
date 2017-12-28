@@ -1,12 +1,12 @@
 <p>
-  form-demo-2 demo!
-  NgModel & ngForm 的valid
+  form-demo-2 demo! NgModel & ngForm 的valid
 </p>
-<form #myform="ngForm" (ngSubmit)="onSubmit(myform)" >
-    <input name="name" ngModel email="true" required #first="ngModel">
-    <button>Submit</button>
+<span>驗證Eamil</span>
+<form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+  <input name="name" ngModel email="true" required #first="ngModel">
+  <button>Submit</button>
 </form>
-  
+
 <p>First name value: {{ first.value }}</p>
 <p>First name valid: {{ first.valid }}</p>
 <p>Form value: {{ myform.value | json }}</p>

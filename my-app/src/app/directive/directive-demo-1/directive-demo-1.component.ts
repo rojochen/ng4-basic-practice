@@ -20,6 +20,9 @@ export class DirectiveDemo1Component implements OnInit {
   color: string;
   auth: boolean;
   constructor() {
+  }
+
+  ngOnInit() {
     this.title = 'Template Syntax';
     this.isUnchanged = true;
     this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
@@ -32,9 +35,6 @@ export class DirectiveDemo1Component implements OnInit {
     this.isString = 'str';
     this.myVar = 'A';
     this.auth = false;
-  }
-
-  ngOnInit() {
   }
   getMember() {
     return [{

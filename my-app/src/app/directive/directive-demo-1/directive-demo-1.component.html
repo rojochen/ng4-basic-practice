@@ -1,26 +1,30 @@
-<hr>
-<h1>directive template</h1>
+<h1> directive template</h1>
 
 <h2 id="expression-context">Expression context</h2>
 <div class="content">
+  <!-- innerHTML property -->
   <p>"
     <span [innerHTML]="evilTitle"></span>" is the
     <i>property bound</i> evil title.</p>
   <br>
+  <!-- hidden property -->
   <p>Component expression context (&#123;&#123;title&#125;&#125;, [hidden]="isUnchanged")</p>
   <p>isUnchanged: {{ isUnchanged }}</p>
   <div>
     {{title}}
     <span [hidden]="isUnchanged">changed</span>
   </div>
-
+  <!-- disabled property -->
   <p>Bind button disabled state to `isUnchanged` property</p>
   <button [disabled]="isUnchanged">Button is disabled</button>
+  <!-- bind-disabled -->
   <button bind-disabled="isUnchanged">Disabled Cancel</button>
 
   <hr>
   <p>Bind img src to property</p>
+  <!-- src property -->
   <img [src]="imgUrl" alt="Angular icon" width="30" height="30" />
+  <!-- bind-src -->
   <img bind-src="imgUrl" alt="Angular icon" width="30" height="30" />
 
   <hr>
@@ -118,7 +122,7 @@
   <p>*ngFor and *ngIf</p>
   <!-- ng-container 既不是一個 Component，也不是一個 Directive，只是單純的一個特殊 tag。 這點類似於 template，Angular 復用了 HTML5 規範中 template tag 的語義，不過並沒有真正利用其實現，因此在審查元素中是永遠也找不到一個
   template 元素的。 -->
-   <!-- ng1.x 在 directive 上有優先處理之分，在ng2 plus後就沒有這個機制，所以當Dom上有 *ngFor and *ngIf 他會不知道誰會優先處理，這時候就會需要 ng-container -->
+  <!-- ng1.x 在 directive 上有優先處理之分，在ng2 plus後就沒有這個機制，所以當Dom上有 *ngFor and *ngIf 他會不知道誰會優先處理，這時候就會需要 ng-container -->
 
   <ng-container *ngFor="let member of getMember();trackBy: trackByIndex;">
     <p *ngIf="member.id !== 1" [innerHTML]="member.name"></p>

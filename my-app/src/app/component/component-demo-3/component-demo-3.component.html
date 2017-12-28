@@ -1,37 +1,43 @@
-<p>
-  component-demo-3 works!
-</p>
-<p>
+<div>
   <!--one way implement -->
   one way:
   <input type="text" [value]="oneWayValue" (input)="input($event)" />
-  <span>{{oneWayValue}}</span>
-  <br/>
-  <!--two way implement : Banana in a Box -->
+  <span>oneWayValue: {{oneWayValue}}</span>
+</div>
+<br/>
+<!--two way implement : Banana in a Box -->
+<div>
   two way(Banana in a Box):
   <input type="text" [(ngModel)]="twoWayValue" (ngModelChange)="log()" />
-  <span>{{twoWayValue}}</span>
-  <br/> bindon:
+  <span>twoWayValue: {{twoWayValue}}</span>
+</div>
+<br/>
+<div>
+  <!-- bindon-ngModel -->
+  bindon:
   <input type="text" bindon-ngModel="twoWayValue1" (ngModelChange)="log()" />
-  <span>{{twoWayValue1}}</span>
-  <br/>
+  <span>bindon-ngModel: {{twoWayValue1}}</span>
+</div>
+<br/>
 
-  <!--demo select -->
-  <select name="" [(ngModel)]="selectValue">
-    <option value="angular">Angular</option>
-    <option value="react">React</option>
-    <option value="Vue">Vue</option>
-  </select>
-  <span>{{selectValue}}</span>
-  <br/>
+<!--demo select -->
+<select name="" [(ngModel)]="selectValue">
+  <option value="angular">Angular</option>
+  <option value="react">React</option>
+  <option value="Vue">Vue</option>
+</select>
+<span>select: {{selectValue}}</span>
+<br/>
+<div>
   <!-- radio by ngModel -->
   <input type="radio" id="contactChoice1" name="contact" [(ngModel)]="radioValue" value="email">
   <label for="contactChoice1">Email</label>
-
   <input type="radio" id="contactChoice2" name="contact" [(ngModel)]="radioValue" value="phone">
   <label for="contactChoice2">Phone</label>
-  <span>{{radioValue}}</span>
-  <br/>
+  <span>select radio: {{radioValue}}</span>
+</div>
+<br/>
+<div>
   <!-- checkbox by ngModel -->
   <input type="checkbox" id="box1" name="subscribe" [(ngModel)]="boxList[0].selected">
   <label for="box1">{{boxList[0].value}}</label>
@@ -39,5 +45,5 @@
   <label for="box2">{{boxList[1].value}}</label>
   <input type="checkbox" id="box3" name="subscribe3" [(ngModel)]="boxList[2].selected">
   <label for="box3">{{boxList[2].value}}</label>
-  <span>{{boxValue1}}</span>
-</p>
+  <span>select box: {{boxValue1}}</span>
+</div>

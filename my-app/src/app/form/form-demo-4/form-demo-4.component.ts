@@ -10,10 +10,10 @@ export class FormDemo4Component implements OnInit {
   user: FormGroup;
   constructor(private fb: FormBuilder) {
     this.user = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
+      name: ['', [Validators.required, Validators.minLength(2)]], // 必填 最小長度為2
       account: this.fb.group({
-        email: ['', Validators.required],
-        confirm: ['', Validators.required]
+        email: ['', Validators.required], // 必填
+        confirm: ['', Validators.required] // 必填
       })
     });
   }

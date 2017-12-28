@@ -29,7 +29,7 @@ export class FormDemo3Component implements OnInit {
   }
   // form 表單送出
   onSubmit(formGropup: FormGroup) {
-    if (formGropup.valid === true) {
+    if (!!formGropup.valid) {
       // do something
       alert('表單檢核成功!');
     } else {
