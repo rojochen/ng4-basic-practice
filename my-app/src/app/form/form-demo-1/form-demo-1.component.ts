@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// user interface
 import { User } from './signup.interface';
 
 @Component({
@@ -18,6 +19,7 @@ export class FormDemo1Component implements OnInit {
   };
   ngOnInit() {
   }
+  // form submit
   onSubmit(obj: any) {
     console.log(obj.value);
   }

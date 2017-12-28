@@ -15,7 +15,10 @@ export class ComponentDemo2Component implements OnInit {
     this.disabledValue = false;
     this.textPlaceholder = '';
   }
-
+  init() {
+    this.disabledValue = true;
+    console.log('init ');
+  }
   isDisalbed(): boolean {
     return this.disabledValue;
   }

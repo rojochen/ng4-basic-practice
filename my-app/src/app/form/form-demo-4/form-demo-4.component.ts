@@ -21,10 +21,10 @@ export class FormDemo4Component implements OnInit {
   ngOnInit() {
   }
   onSubmit(formGropup: FormGroup) {
-    if ( formGropup.valid === true) {
+    if (!!formGropup.valid) {
       // do something
       alert('表單檢核成功!');
-    }else {
+    } else {
       alert('ERROR!');
     }
   }

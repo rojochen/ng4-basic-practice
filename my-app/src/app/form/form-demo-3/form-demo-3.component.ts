@@ -18,19 +18,21 @@ export class FormDemo3Component implements OnInit {
   user: FormGroup;
   ngOnInit() {
     this.user = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-        account: new FormGroup({
-          email: new FormControl('', Validators.required),
-          confirm: new FormControl('', Validators.required)
-        })
+      name: new FormControl('', [Validators.required, Validators.minLength(2)]), // 必填 最小長度為2
+      account: new FormGroup({
+        email: new FormControl('', Validators.required), // 必填
+        confirm: new FormControl('', Validators.required) // 必填
+      })
     });
+    // 監聽 user value  變化
     this.user.valueChanges.subscribe(value => console.log(value));
   }
+  // form 表單送出
   onSubmit(formGropup: FormGroup) {
-    if ( formGropup.valid === true) {
+    if (formGropup.valid === true) {
       // do something
       alert('表單檢核成功!');
-    }else {
+    } else {
       alert('ERROR!');
     }
   }

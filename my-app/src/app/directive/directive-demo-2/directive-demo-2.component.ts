@@ -9,7 +9,6 @@ export class DirectiveDemo2Component implements OnInit {
   color: string;
   count: number;
   constructor() {
-    
   }
 
   ngOnInit() {

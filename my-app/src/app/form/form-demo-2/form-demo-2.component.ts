@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-form-demo-2',
   templateUrl: './form-demo-2.component.html',
@@ -11,13 +11,14 @@ export class FormDemo2Component implements OnInit {
 
   ngOnInit() {
   }
+  // form Submit
   onSubmit(f: NgForm) {
     console.log(f.value);  // { first: '', last: '' }
     console.log(f.valid);  // false
-    if ( f.valid === true) {
+    if (f.valid === true) {
       // do something
       alert('表單檢核成功!');
-    }else {
+    } else {
       alert('ERROR!');
     }
   }

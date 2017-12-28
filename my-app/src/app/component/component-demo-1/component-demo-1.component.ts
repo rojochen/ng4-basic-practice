@@ -37,4 +37,7 @@ export class ComponentDemo1Component implements OnInit {
   say(): void {
     alert('Hello World');
   }
+  myFunction(): void {
+    alert('copy text');
+  }
 }

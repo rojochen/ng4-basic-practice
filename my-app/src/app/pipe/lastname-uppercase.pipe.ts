@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-//pure: false
+// pure: false
 @Pipe({
   name: 'lastnameUppercase'
 })
