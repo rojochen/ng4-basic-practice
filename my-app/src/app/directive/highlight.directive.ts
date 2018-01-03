@@ -12,6 +12,8 @@ import { Directive, ElementRef, HostListener, Input, HostBinding } from '@angula
  * exportAs?: string; // 導出指令，使得可以在模板中調用
  * queries?: { [key: string]: any }; // 設置指令的查詢條件
  */
+
+ 
 @Directive({
   selector: '[appHighlight]'
 })
@@ -31,6 +33,11 @@ export class HighlightDirective {
   // 監聽onMouseEnter 事件
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight(this.highlightColor || this.defaultColor || 'red');
+  }
+
+  // 監聽onMouseEnter 事件 with HostListenerDecorator
+  @HostListener('mouseenter', ['$event']) onMouseEnterWithHostListenerDecorator(e: HTMLElement) {
+    console.log('e: ', e);
   }
 
   // 監聽 mouseleave 事件
