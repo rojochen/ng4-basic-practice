@@ -4,6 +4,7 @@
     [placeholder]="textPlaceholder"
     [placeholder]="{{textPlaceholder}}" 這個會有問題
   -->
+  <input type="text" [placeholder]="textPlaceholder">
   <button [disabled]="disabledValue">Property binding [disabled]</button>
   <button (click)="changeDisable()">click event changeDisable()</button>
 </div>

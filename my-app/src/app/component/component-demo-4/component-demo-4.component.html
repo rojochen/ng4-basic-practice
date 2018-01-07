@@ -1,8 +1,10 @@
 <p>two way</p>
 <div>
-  <input [(ngModel)]="name" #ctrl="ngModel" required>
+  <!-- two way or one way -->
+  <input [(ngModel)]="name" #ctrl="ngModel" required >
   <div>Value: {{ name }}</div>
   <div>Valid: {{ ctrl.valid }}</div>
   <button (click)="setValue()">Set value</button>
 </div>
-<span>two way vale: {{ctrl.value}}</span>
+<!--ctrl : Template 使用的物件 -->
+<span>Template vale: {{ctrl.value}}</span>

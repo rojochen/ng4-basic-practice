@@ -13,7 +13,7 @@ export class ComponentDemo2Component implements OnInit {
   }
   ngOnInit() {
     this.disabledValue = false;
-    this.textPlaceholder = '';
+    this.textPlaceholder = '請輸入文字';
   }
   init() {
     this.disabledValue = true;

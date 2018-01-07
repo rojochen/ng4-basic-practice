@@ -19,6 +19,28 @@ export class DirectiveDemo1Component implements OnInit {
   myVar: string;
   color: string;
   auth: boolean;
+  people: { name: string, country: string }[] = [
+    {
+      'name': 'Max',
+      'country': 'UK'
+    },
+    {
+      'name': 'Chris',
+      'country': 'USA'
+    },
+    {
+      'name': 'Will',
+      'country': 'HK'
+    },
+    {
+      'name': 'Danny',
+      'country': 'UK'
+    },
+    {
+      'name': 'Tyson',
+      'country': 'USA'
+    }
+  ];
   constructor() {
   }
 
@@ -35,6 +57,19 @@ export class DirectiveDemo1Component implements OnInit {
     this.isString = 'str';
     this.myVar = 'A';
     this.auth = false;
+  }
+  getColor(country) {
+    switch (country) {
+      case 'UK':
+        return 'green';
+      case 'USA':
+        return 'blue';
+      case 'HK':
+        return 'red';
+    }
+  }
+  getTrue() {
+    return true;
   }
   getMember() {
     return [{

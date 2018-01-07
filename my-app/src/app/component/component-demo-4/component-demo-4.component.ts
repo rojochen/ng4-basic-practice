@@ -10,8 +10,12 @@ export class ComponentDemo4Component implements OnInit {
   name: string;
   constructor() { }
   ngOnInit() {
+    this.name = 'John';
   }
   setValue() {
     this.name = 'Nancy';
+  }
+  ngModelChange(changes) {
+    console.log(changes);
   }
 }

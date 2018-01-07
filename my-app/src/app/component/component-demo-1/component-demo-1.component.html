@@ -1,4 +1,5 @@
 <p>
+  <!-- Template Expression 範例 -->
   hello {{name}}
 </p>
 <p>
@@ -7,6 +8,12 @@
 </p>
 <p>
   <!-- "The sum of 1 + 1 is 2" -->
+  <!-- 
+    1.無明顯副作用：Expression不該影響其它的值或物件的狀態
+    2.快速執行：不該佔效能的相關行為。如 http query、time event
+    3.保持簡單(維護性): Expression 單純顯示，過多或太多運算不符合 MVC 精神
+    4.一樣的條件要回傳一樣的值
+  -->
   The sum of 1 + 1 is {{ getVal()}}
 </p>
 <p>
@@ -39,4 +46,4 @@ heroInput:
   <input #phone placeholder="phone number">
   <button (click)="call(phone.value)">Call(getPhoneValue)</button>
 </div>
-<!-- anti parttern <span>{{init()}}</span> -->
+ 

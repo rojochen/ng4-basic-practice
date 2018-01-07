@@ -13,8 +13,8 @@ export class ComponentDemo1Component implements OnInit {
   constructor() {
   }
   ngOnInit() {
-    this.name = 'roger';
-    this.heroInput = 'Heloow';
+    this.name = 'Ken';
+    this.heroInput = 'hello';
     this.values = '';
     this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
   }

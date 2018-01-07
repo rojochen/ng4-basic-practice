@@ -1,67 +1,15 @@
 <h1> directive template</h1>
-
-<h2 id="expression-context">Expression context</h2>
-<div class="content">
-  <!-- innerHTML property -->
-  <p>"
-    <span [innerHTML]="evilTitle"></span>" is the
-    <i>property bound</i> evil title.</p>
-  <br>
-  <!-- hidden property -->
-  <p>Component expression context (&#123;&#123;title&#125;&#125;, [hidden]="isUnchanged")</p>
-  <p>isUnchanged: {{ isUnchanged }}</p>
-  <div>
-    {{title}}
-    <span [hidden]="isUnchanged">changed</span>
-  </div>
-  <!-- disabled property -->
-  <p>Bind button disabled state to `isUnchanged` property</p>
-  <button [disabled]="isUnchanged">Button is disabled</button>
-  <!-- bind-disabled -->
-  <button bind-disabled="isUnchanged">Disabled Cancel</button>
-
-  <hr>
-  <p>Bind img src to property</p>
-  <!-- src property -->
-  <img [src]="imgUrl" alt="Angular icon" width="30" height="30" />
-  <!-- bind-src -->
-  <img bind-src="imgUrl" alt="Angular icon" width="30" height="30" />
-
-  <hr>
-  <p>Bind class or style to property</p>
-  <div [class.special]="isSpecial">Special</div>
-  <button [style.color]="isSpecial ? 'red' : 'green'">button</button>
-  <button [style.background-color]="canSave ? 'cyan': 'grey'">Save</button>
-  <button [style.font-size.em]="isSpecial ? 3 : 1">Big</button>
-  <button [style.font-size.%]="!isSpecial ? 150 : 50">Small</button>
-  <hr>
-
-
-</div>
-<div class="content">
-  <p>Attribute Binding</p>
-  <table border=1>
-    <tr>
-      <td [attr.colspan]="1 + 1">One-Two</td>
-    </tr>
-    <tr>
-      <td>Five</td>
-      <td>Six</td>
-    </tr>
-  </table>
-  <button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
-  <img [attr.src]="imgUrl" alt="Angular icon" width="30" height="30" />
-  <button [attr.disabled]="isUnchanged">Disabled</button>
-</div>
-<div class="content">
-  <p>ngClass</p>
-  <div [ngClass]="{bordered: false}">This is never bordered</div>
-  <div [ngClass]="{bordered: true}">This is always bordered</div>
-</div>
 <div class="content">
   <p>ngStyle</p>
   <div [ngStyle]="{color: 'white', 'background-color': 'blue'}">Uses fixed white text on blue background</div>
 </div>
+
+<div class="content">
+  <p>ngClass</p>
+  <div [ngClass]="{bordered: false}">This is never bordered</div>
+  <div [ngClass]="{bordered: getTrue()}">This is always bordered</div>
+</div>
+
 <div class="content">
   <!-- angular 2 plus *ngIf範例 -->
   <p>*ngIf</p>
@@ -113,6 +61,15 @@
     <span>Name: {{ member.name}}</span>
   </div>
 
+  <!-- ngFor and ngStyle-->
+  <p>ngFor and ngStyle</p>
+
+  <div>
+    <ul *ngFor="let person of people">
+      <li [ngStyle]="{'font-size.px':20}" [style.color]="getColor(person.country)">{{ person.name }} ({{ person.country }})
+      </li>
+    </ul>
+  </div>
   <p>select use *ngFor</p>
   <!-- (change) 類似於 ng1.x ngChange -->
   <select (change)="selectChange($event)">
@@ -134,6 +91,4 @@
 <ng-template>
   HELLO TEMPLATE
 </ng-template>
-
-
 <!-- hidde vs hidden 差異 參考連結  https://blog.johnwu.cc/article/angular-4-ngif-vs-hidden.html -->
