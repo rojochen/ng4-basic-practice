@@ -24,13 +24,8 @@ const routes: Routes = [
 ];
 
 // 只有RootRoute才可以設定的config
-// enableTracing makes the router log all its internal events to the console.
-// useHash enables the location strategy that uses the URL fragment instead of the history API.
-// initialNavigation disables the initial navigation.
-// errorHandler provides a custom error handler.
-// preloadingStrategy configures a preloading strategy (see PreloadAllModules).
-// onSameUrlNavigation configures how the router handles navigation to the current URL. See ExtraOptions for more details.
-const RootRouteSettingConfig = { enableTracing: true };
+// enableTracing : 開啟route debug
+const RootRouteSettingConfig = { enableTracing: false };
 
 @NgModule({
   imports: [
