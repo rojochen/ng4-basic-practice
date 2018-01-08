@@ -38,7 +38,9 @@ import { TimingInterceptorService } from './interceptor/timing-interceptor.servi
 // route module
 import { RouteModule } from './route/route.module';
 import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.component';
-
+import { MovieFilterPipe } from './pipe/movie-filter.pipe';
+import { PipeDemo2Component } from './pipe/pipe-demo-2/pipe-demo-2.component';
+ 
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
     DirectiveDemo2Component,
     LastnameUppercasePipe,
     PipeDemo1Component,
+    PipeDemo2Component,
     FilterNumberPipe,
     FormDemo1Component,
     FormDemo2Component,
@@ -62,7 +65,8 @@ import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.c
     ServiceDemo2Component,
     ServiceDemo3Component,
     RanDomColorDirective,
-    CollarDirective
+    CollarDirective,
+    MovieFilterPipe
   ],
   imports: [
     BrowserModule,

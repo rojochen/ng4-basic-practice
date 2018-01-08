@@ -19,9 +19,11 @@ export class ComponentDemo1Component implements OnInit {
     this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
   }
   init(): void {
+
     console.log('hello');
   }
   getVal(): number {
+    //debugger;
     return 2;
   }
   keydown(): void {
