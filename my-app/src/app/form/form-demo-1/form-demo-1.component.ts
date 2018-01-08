@@ -12,7 +12,7 @@ export class FormDemo1Component implements OnInit {
   constructor() { }
   user: User = {
     name: 'Todd Motto',
-    account: {
+    emailGroup: {
       email: '',
       confirm: ''
     }

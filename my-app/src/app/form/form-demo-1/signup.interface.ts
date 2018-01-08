@@ -1,7 +1,7 @@
 // signup.interface.ts
 export interface User {
   name: string;
-  account: {
+  emailGroup: {
     email: string;
     confirm: string;
   };

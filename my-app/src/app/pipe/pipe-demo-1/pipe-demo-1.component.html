@@ -2,13 +2,17 @@
   built-in pipe works!
 </p>
 <!-- more :https://angular.io/api/common/DatePipe-->
+<p>Today is {{today | date}}</p>
 <p>TODAY : {{today | date:'yyyy年MM月dd HH:mm a z':'+0900'}}</p>
-
+<!-- number_expression | percent[:digitInfo[:locale]] :後面參數 -->
+<!-- https://angular.io/api/common/PercentPipe -->
 <p>A: {{a | percent}}</p>
 <!-- JSON.stringify -->
+<!-- https://angular.io/api/common/JsonPipe -->
 <p>{{object | json}}</p>
 
 <p>{{value | uppercase | slice:0:5}}</p>
+
 <!--原始的value不受影響 -->
 <div>
   {{value }} <br/>
