@@ -1,11 +1,10 @@
 <div>
-  <input type="text" #listFilter (keyup)="0" />
+  <input type="text" #listFilter [(ngModel)]='movieName' (keyup)="0" />
 </div> 
 <table class="table"> 
     <tbody> 
-        <tr *ngFor="let movie of movies | movieFilter:listFilter.value" > 
+        <tr *ngFor="let movie of movies | movieFilter:movieName" > 
              <td>{{ movie.title}}</td> 
-  
         </tr> 
     </tbody> 
 </table>
