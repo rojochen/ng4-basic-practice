@@ -20,5 +20,4 @@ export class PipeDemo2Component implements OnInit {
       { title: '幸福路上' }
     ];
   }
-
 }
