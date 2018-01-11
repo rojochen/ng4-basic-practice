@@ -19,6 +19,8 @@ export class DirectiveDemo1Component implements OnInit {
   myVar: string;
   color: string;
   auth: boolean;
+  fontSize: number;
+  showMessage: boolean;
   people: { name: string, country: string }[] = [
     {
       'name': 'Max',
@@ -42,6 +44,8 @@ export class DirectiveDemo1Component implements OnInit {
     }
   ];
   constructor() {
+    this.fontSize = 12;
+    this.showMessage = false;
   }
 
   ngOnInit() {
@@ -71,6 +75,11 @@ export class DirectiveDemo1Component implements OnInit {
   getTrue() {
     return true;
   }
+  toggle() {
+    this.showMessage = !this.showMessage;
+    return this.showMessage;
+  }
+
   getMember() {
     return [{
       id: 1,
@@ -96,4 +105,5 @@ export class DirectiveDemo1Component implements OnInit {
   selectChange(e) {
     console.log('e: ', e);
   }
+
 }

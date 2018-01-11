@@ -27,7 +27,6 @@ import { ServiceDiComponent } from './service-di/service-di.component';
 
 // directive
 import { HighlightDirective } from './directive//highlight.directive';
-import { CollarDirective } from './directive/collar.directive';
 import { RanDomColorDirective } from './directive/ran-dom-color.directive';
 
 // global service
@@ -65,7 +64,6 @@ import { PipeDemo2Component } from './pipe/pipe-demo-2/pipe-demo-2.component';
     ServiceDemo2Component,
     ServiceDemo3Component,
     RanDomColorDirective,
-    CollarDirective,
     MovieFilterPipe
   ],
   imports: [

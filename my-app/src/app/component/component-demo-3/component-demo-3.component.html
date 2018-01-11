@@ -40,11 +40,15 @@
 <br/>
 <div>
   <!-- checkbox by ngModel -->
-  <input type="checkbox" id="box1" name="subscribe" [(ngModel)]="boxList[0].selected">
+  <input type="checkbox" id="box1" name="subscribe" value="vue" [(ngModel)]="boxList[0].selected">
   <label for="box1">{{boxList[0].value}}</label>
-  <input type="checkbox" id="box2" name="subscribe2" [(ngModel)]="boxList[1].selected">
+  <input type="checkbox" id="box2" name="subscribe2" value="react"  [(ngModel)]="boxList[1].selected">
   <label for="box2">{{boxList[1].value}}</label>
-  <input type="checkbox" id="box3" name="subscribe3" [(ngModel)]="boxList[2].selected">
+  <input type="checkbox" id="box3" name="subscribe3" value="angular"  [(ngModel)]="boxList[2].selected">
   <label for="box3">{{boxList[2].value}}</label>
-  <span>select box: {{boxValue1}}</span>
+  <span>
+    select1: {{boxList[0]| json }}
+    select2: {{boxList[1]|json }}
+    select3: {{boxList[2]|json}}
+  </span>
 </div>

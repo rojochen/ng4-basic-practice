@@ -1,7 +1,12 @@
 <h1> directive template</h1>
 <div class="content">
   <p>ngStyle</p>
-  <div [ngStyle]="{color: 'white', 'background-color': 'blue'}">Uses fixed white text on blue background</div>
+  <div  [ngStyle]="{color: 'white', 'background-color': 'blue'}">Uses fixed white text on blue background</div>
+  <div [ngStyle]="{ 'font-size': fontSize + 'px'}">
+      style using ngStyle
+    </div>
+    <button (click)="fontSize = fontSize + 1">+</button>
+    <button (click)="fontSize = fontSize - 1">-</button>
 </div>
 
 <div class="content">
@@ -14,7 +19,7 @@
   <!-- angular 2 plus *ngIf範例 -->
   <p>*ngIf</p>
   <p *ngIf="bigNum > smallNum">數字大小判斷</p>
-  <p *ngIf="isString === 'str'">字串判斷</p>
+  <p *ngIf="isString === 'str'">串判斷</p>
   <p *ngIf="validationFun()">ngIf = validationFun()</p>
 </div>
 <div class="content">
@@ -30,6 +35,14 @@
   <p *ngIf="auth; else fetching;">
   </p>
 </div>
+<div class="content">
+    <h2>*ngIfElese2</h2>
+    <button (click)="toggle()">toggle</button>
+    <p *ngIf="toggle();else hideMessage;" > Show Message</p>
+    <ng-template #hideMessage>
+        <p>Hide Message</p>
+    </ng-template>
+  </div>
 <div class="content" [ngSwitch]="myVar">
   <p>ngSwitch</p>
   <!-- angular2 plus swtich case directive -->
@@ -79,7 +92,7 @@
   <p>*ngFor and *ngIf</p>
   <!-- ng-container 既不是一個 Component，也不是一個 Directive，只是單純的一個特殊 tag。 這點類似於 template，Angular 復用了 HTML5 規範中 template tag 的語義，不過並沒有真正利用其實現，因此在審查元素中是永遠也找不到一個
   template 元素的。 -->
-  <!-- ng1.x 在 directive 上有優先處理之分，在ng2 plus後就沒有這個機制，所以當Dom上有 *ngFor and *ngIf 他會不知道誰會優先處理，這時候就會需要 ng-container -->
+  <!-- ng1.x 在 directive 上有優先處理之分，在ng2+後就沒有這個機制，所以當Dom上有 *ngFor and *ngIf 他會不知道誰會優先處理，這時候就會需要 ng-container -->
 
   <ng-container *ngFor="let member of getMember();trackBy: trackByIndex;">
     <p *ngIf="member.id !== 1" [innerHTML]="member.name"></p>
@@ -87,7 +100,7 @@
 
 </div>
 
-<!-- 類似於 ng1.x的 ng-included -->
+<!-- 不會真的顯示在DOM -->
 <ng-template>
   HELLO TEMPLATE
 </ng-template>

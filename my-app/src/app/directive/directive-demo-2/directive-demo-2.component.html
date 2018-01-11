@@ -1,14 +1,12 @@
 <div class="content">
   <p>Highlight Directive 範例一</p>
   <!-- 透過 radio button 設定 hightlight color -->
-  <input type="radio" name="colors" (click)="color='lightgreen'">Green
-  <input type="radio" name="colors" (click)="color='yellow'">Yellow
-  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+  <input type="radio" name="colors" [(ngModel)]="color" value="green">Green
+  <input type="radio" name="colors" [(ngModel)]="color" value="yellow" >Yellow
+  <input type="radio" name="colors" [(ngModel)]="color" value="red">Red
+  {{color}}
   <p [appHighlight]="color">Highlight me!</p>
   <p [appHighlight]="color" defaultColor="violet">
-    <p>
-      <i>Mouse over the following lines to see fixed highlights</i>
-    </p>
     <p [appHighlight]="'yellow'">Highlighted in yellow</p>
     <p appHighlight="orange">Highlighted in orange</p>
 </div>
@@ -18,9 +16,3 @@
   <input type="text" appRanDomColor>
 </div>
 
-<div class="content">
-  <p>Directive 組件間傳遞 @output</p>
-  <p>@output</p>
-  {{count}}
-  <button appCollar (result)="countChange($event)"> + </button>
-</div>

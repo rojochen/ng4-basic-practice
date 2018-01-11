@@ -9,18 +9,18 @@
 <p>A: {{a | percent}}</p>
 <!-- JSON.stringify -->
 <!-- https://angular.io/api/common/JsonPipe -->
-<p>{{object | json}}</p>
+<p>JSON格式 : {{object | json}}</p>
 
-<p>{{value | uppercase | slice:0:5}}</p>
+<p>永遠是大寫 : {{value | uppercase | slice:0:5}}</p>
 
 <!--原始的value不受影響 -->
 <div>
   {{value }} <br/>
-  {{value | lastnameUppercase}}
+  LastName是大寫 {{value | lastnameUppercase}}
 </div>
 <div>
   <input type="number" name="" [(ngModel)]="searchNum">
   <ul>
-    <li *ngFor=" let list of (numberList | filterNumber: searchNum)">{{list}}</li>
+    <li *ngFor=" let num of (numberList | filterNumber: searchNum)">{{num}}</li>
   </ul>
 </div>

@@ -13,21 +13,20 @@ import { Directive, ElementRef, HostListener, Input, HostBinding } from '@angula
  * queries?: { [key: string]: any }; // 設置指令的查詢條件
  */
 
- 
+
 @Directive({
   selector: '[appHighlight]'
 })
 export class HighlightDirective {
-  // ElementRef注入到指令構造函數中。這樣代碼就可以訪問 DOM 元素了。
+  // ElementRef注入到指令構造函數中。這樣代碼就可以訪問 DOM 元素。
   // HostListener 是屬性裝飾器，用來為宿主元素添加事件監聽。
   // HostBinding 是屬性裝飾器，用來動態設置宿主元素的屬性值。
-  
   constructor(private el: ElementRef) { }
 
   @Input() defaultColor: string; // 沒有指定將預設跑這一個取得父值
   @Input('appHighlight') highlightColor: string; // 指定[appHighlight] 接收父傳來的值
 
-  // HostBinding 是屬性裝飾器，用來動態設置宿主元素的屬性值。
+  // HostBinding 是屬性裝飾器，用來動態設置hosting元素的屬性值。
   @HostBinding('style.color') color: string;
 
   // 監聽onMouseEnter 事件
@@ -38,14 +37,15 @@ export class HighlightDirective {
   // 監聽onMouseEnter 事件 with HostListenerDecorator
   @HostListener('mouseenter', ['$event']) onMouseEnterWithHostListenerDecorator(e: HTMLElement) {
     console.log('e: ', e);
+    //alert(this.highlightColor);
   }
 
   // 監聽 mouseleave 事件
   @HostListener('mouseleave') onMouseLeave() {
-    this.highlight(null);
+    this.highlight(this.highlightColor);
   }
 
-   highlight(color: string) {
+  highlight(color: string) {
     this.el.nativeElement.style.backgroundColor = color;
   }
 }

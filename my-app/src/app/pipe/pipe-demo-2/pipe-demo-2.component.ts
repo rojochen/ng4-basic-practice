@@ -7,9 +7,13 @@ import { Component, OnInit, Pipe } from '@angular/core';
 })
 export class PipeDemo2Component implements OnInit {
   movieName: string;
+  searchName: string;
   movies: { title: string }[];
   constructor() {
     this.movieName = '';
+  }
+  addMovie(title: string) {
+    this.movies.push({ title });
   }
   ngOnInit() {
 

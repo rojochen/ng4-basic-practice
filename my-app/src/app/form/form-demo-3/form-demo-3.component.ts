@@ -19,7 +19,7 @@ export class FormDemo3Component implements OnInit {
   ngOnInit() {
     this.user = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]), // 必填 最小長度為2
-      account: new FormGroup({
+      emailGroup: new FormGroup({
         email: new FormControl('', Validators.required), // 必填
         confirm: new FormControl('', Validators.required) // 必填
       })
@@ -29,11 +29,12 @@ export class FormDemo3Component implements OnInit {
   }
   // form 表單送出
   onSubmit(formGropup: FormGroup) {
-    if (!!formGropup.valid) {
+
+    if (formGropup.valid && formGropup.controls['emailGroup'].value.email === formGropup.controls['emailGroup'].value.confirm) {
       // do something
       alert('表單檢核成功!');
     } else {
-      alert('ERROR!');
+      alert('表單檢核失敗!');
     }
   }
 
