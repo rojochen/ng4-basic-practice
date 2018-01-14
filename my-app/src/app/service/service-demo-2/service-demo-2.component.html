@@ -6,9 +6,9 @@
     <th>ID</th>
     <th>TITLE</th>
   </tr>
-  <tr *ngFor="let list of get">
-    <td>{{ list.userId }}</td>
-    <td>{{ list.title }}</td>
+  <tr *ngFor="let item of items">
+    <td>{{ item.userId }}</td>
+    <td>{{ item.title }}</td>
   </tr>
 </table>
 
@@ -18,9 +18,9 @@
     <th>ID</th>
     <th>TITLE</th>
   </tr>
-  <tr *ngFor="let list of getAsync | async">
-    <td>{{ list.userId }}</td>
-    <td>{{ list.title }}</td>
+  <tr *ngFor="let item of asyncItems | async">
+    <td>{{ item.userId }}</td>
+    <td>{{ item.title }}</td>
   </tr>
 </table>
 
@@ -30,8 +30,8 @@
     <th>ID</th>
     <th>TITLE</th>
   </tr>
-  <tr *ngFor="let list of getPromise">
-    <td>{{ list.userId }}</td>
-    <td>{{ list.title }}</td>
+  <tr *ngFor="let item of promiseItems">
+    <td>{{ item.userId }}</td>
+    <td>{{ item.title }}</td>
   </tr>
 </table>

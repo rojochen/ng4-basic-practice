@@ -5,18 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import 'rxjs/add/observable/forkJoin';
-interface ItemsResponse {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
-interface ItemResClass {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
+import { Item } from '../interface/Item';
 
 class OtherPartsOfTheRequest {
   constructor() {
@@ -38,22 +27,21 @@ class OtherPartsOfTheRequest {
   ]
 })
 export class ServiceDemo2Component implements OnInit {
-  get: any[];
-  getAsync: any;
-  getPromise: any[];
+  items: any[];
+  asyncItems: any;
+  promiseItems: any[];
   request: any;
   otherPartsOfTheRequest: any;
   postDomainUrl: string;
   constructor(
     // private Log: LoggerService //這邊無法使用LogService 因為沒有在這邊inject providers
     @Inject('API_URL') private apiDomain: string, // useValue
-    private api: ApiService,
+    private apiService: ApiService,
     private http: HttpClient
   ) {
   }
 
   ngOnInit() {
-    // this.Log.debug('Service demo 2'); 這邊無法使用LogService 因為沒有在這邊inject
     this.postDomainUrl = 'https://jsonplaceholder.typicode.com/posts';
     this.request = {
       method: 'POST',
@@ -66,38 +54,39 @@ export class ServiceDemo2Component implements OnInit {
         'Content-type': 'application/json; charset=UTF-8'
       }
     };
+
     // this.http add interface
-    this.http.get<ItemsResponse>(this.apiDomain + '/posts?userId=1').toPromise().then(data => {
+    this.http.get<Item>(this.apiDomain + '/posts?userId=1').toPromise().then(data => {
       console.log(data.body);
     });
 
     // this.http add class
-    this.http.get<ItemResClass[]>(this.apiDomain + '/posts?userId=1').toPromise().then(data => {
+    this.http.get<Item[]>(this.apiDomain + '/posts?userId=1').toPromise().then(data => {
       console.log('data: ', data);
     }, (err: HttpErrorResponse) => {
       console.log('err: ', err);
       console.log('Something went wrong!');
     });
 
-    this.api.get(this.apiDomain + '/posts').subscribe(res => {
+    this.apiService.get(this.apiDomain + '/posts').subscribe(res => {
       console.log('res type json: ', typeof res);
-      this.get = res;
+      this.items = res;
     });
 
     // pipe Async
-    this.getAsync = this.api.get(this.apiDomain + '/posts');
+    this.asyncItems = this.apiService.get(this.apiDomain + '/posts');
 
     // es6 標準promise的寫法
-    this.api.getTypeText(this.apiDomain + '/posts').subscribe(res => {
+    this.apiService.getTypeText(this.apiDomain + '/posts').subscribe(res => {
       console.log('res type text: ', typeof res);
     });
     // Format Promise
-    this.api.getPromise(this.apiDomain + '/posts').then(res => {
-      this.getPromise = res;
+    this.apiService.getPromise(this.apiDomain + '/posts').then(res => {
+      this.promiseItems = res;
     });
 
 
-    this.api.post(this.postDomainUrl, this.request).subscribe(res => {
+    this.apiService.post(this.postDomainUrl, this.request).subscribe(res => {
       console.log('res', res);
     });
 
@@ -121,13 +110,13 @@ export class ServiceDemo2Component implements OnInit {
   }
   // Rxjs forkJoin = promise.all([])
   forkJoin() {
-    Observable.forkJoin([this.api.get(this.apiDomain + '/posts'), this.api.get(this.apiDomain + '/posts')])
+    Observable.forkJoin([this.apiService.get(this.apiDomain + '/posts'), this.apiService.get(this.apiDomain + '/posts')])
       .subscribe(results => {
         console.error('results: ', results);
       });
   }
   manyRequests() {
-    const req = this.api.post(this.postDomainUrl, this.request);
+    const req = this.apiService.post(this.postDomainUrl, this.request);
     // 0 requests made - .subscribe() not called.
     req.subscribe();
     // 1 request made.
