@@ -39,6 +39,7 @@ import { RouteModule } from './route/route.module';
 import { ServiceDemo3Component } from './service/service-demo-3/service-demo-3.component';
 import { MovieFilterPipe } from './pipe/movie-filter.pipe';
 import { PipeDemo2Component } from './pipe/pipe-demo-2/pipe-demo-2.component';
+import { HttpDemo1Component } from './http/http-demo-1/http-demo-1.component';
  
 
 @NgModule({
@@ -64,7 +65,8 @@ import { PipeDemo2Component } from './pipe/pipe-demo-2/pipe-demo-2.component';
     ServiceDemo2Component,
     ServiceDemo3Component,
     RanDomColorDirective,
-    MovieFilterPipe
+    MovieFilterPipe,
+    HttpDemo1Component
   ],
   imports: [
     BrowserModule,
