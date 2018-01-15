@@ -44,6 +44,6 @@ const RootRouteSettingConfig = { enableTracing: false };
     // openHtml5Dynamic3ParentComponentDynamic3ChildComponentConfig, // open HTML5
     RouteService],
   declarations: [],
-  exports: [RouterModule]
+  exports: [RouterModule] //export RouteModule 給rootModule使用
 })
 export class RouteModule { }
