@@ -23,7 +23,7 @@ export class AjaxDemo1Component implements OnInit {
 
   ngOnInit(): void {
     // 回傳Observable的物件
-    this.userObserver = this.http.get<UserResponse>('https://api.github.com/users/11seeschweiler');
+    this.userObserver = this.http.get<UserResponse>('https://api.github.com/users/seeschweiler');
     //this.userObserver.catch((err) => { throw new Error('error in source. Details: ' + err); });
 
   }
