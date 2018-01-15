@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpDemo2Component } from './http-demo-2.component';
+import { AjaxDemo3Component } from './ajax-demo-3.component';
 
-describe('HttpDemo2Component', () => {
-  let component: HttpDemo2Component;
-  let fixture: ComponentFixture<HttpDemo2Component>;
+describe('AjaxDemo3Component', () => {
+  let component: AjaxDemo3Component;
+  let fixture: ComponentFixture<AjaxDemo3Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HttpDemo2Component ]
+      declarations: [ AjaxDemo3Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HttpDemo2Component);
+    fixture = TestBed.createComponent(AjaxDemo3Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
