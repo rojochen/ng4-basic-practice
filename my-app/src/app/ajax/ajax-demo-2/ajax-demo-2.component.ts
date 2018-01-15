@@ -4,12 +4,12 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
 interface Store {
-  "id": string
-  "petId": string;
-  "quantity": number;
-  "shipDate": Date;
-  "status": string;
-  "complete": boolean;
+  'id': string
+  'petId': string;
+  'quantity': number;
+  'shipDate': Date;
+  'status': string;
+  'complete': boolean;
 }
 @Component({
   selector: 'app-ajax-demo-2',
@@ -29,12 +29,12 @@ export class AjaxDemo2Component implements OnInit {
   }
   addData(): void {
     this.storeBody = {
-      "id": this.addStoreId,
-      "petId": this.addStoreId,
-      "quantity": 0,
-      "shipDate": new Date(),
-      "status": "placed",
-      "complete": false
+      'id': this.addStoreId,
+      'petId': this.addStoreId,
+      'quantity': 0,
+      'shipDate': new Date(),
+      'status': 'placed',
+      'complete': false
     };
     this.Http.post<Store>('http://petstore.swagger.io/v2/store/order', this.storeBody).subscribe(res => {
       console.log('res: ', res);
