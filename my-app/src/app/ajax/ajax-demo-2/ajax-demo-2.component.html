@@ -1,3 +1,20 @@
-<p>
-  ajax-demo-2 works!
-</p>
+<div>
+    <h3>新增資料</h3>
+    Store Number:
+    <input [(ngModel)]="addStoreId">
+    <button (click)="addData()">Add Data</button>
+</div>
+<hr>
+<div>
+    <h3>搜尋指定資料</h3>
+    Store Number:
+    <input [(ngModel)]="searchStoreId">
+    <button (click)="searchData()">Search Data</button>
+</div>
+<hr>
+<div>
+    <h3>刪除指定資料</h3>
+    Store Number:
+    <input [(ngModel)]="deleteStoreId">
+    <button (click)="deleteData()">Delete Data</button>
+</div>

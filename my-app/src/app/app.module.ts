@@ -41,6 +41,7 @@ import { MovieFilterPipe } from './pipe/movie-filter.pipe';
 import { PipeDemo2Component } from './pipe/pipe-demo-2/pipe-demo-2.component';
 
 import { AjaxDemo1Component } from './ajax/ajax-demo-1/ajax-demo-1.component';
+import { AjaxDemo2Component } from './ajax/ajax-demo-2/ajax-demo-2.component';
  
 
 @NgModule({
@@ -67,7 +68,8 @@ import { AjaxDemo1Component } from './ajax/ajax-demo-1/ajax-demo-1.component';
     ServiceDemo3Component,
     RanDomColorDirective,
     MovieFilterPipe,
-    AjaxDemo1Component
+    AjaxDemo1Component,
+    AjaxDemo2Component
   ],
   imports: [
     BrowserModule,
@@ -77,16 +79,16 @@ import { AjaxDemo1Component } from './ajax/ajax-demo-1/ajax-demo-1.component';
     RouteModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ApiInterceptorService,
-      multi: true,
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TimingInterceptorService,
-      multi: true,
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: ApiInterceptorService,
+    //   multi: true,
+    // },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: TimingInterceptorService,
+    //   multi: true,
+    // }
   ],
   bootstrap: [AppComponent]
 })
