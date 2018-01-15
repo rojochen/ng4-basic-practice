@@ -10,7 +10,7 @@ const openHtml5Config = { provide: LocationStrategy, useClass: PathLocationStrat
 const customBaseHref = { provide: APP_BASE_HREF, useValue: '/' };
 
 // route module
-import { BasicModule } from './basic/basic.module';
+import { BasicRouteModule } from './basic/basic.module';
 import { DynamicModule } from './dynamic/dynamic.module';
 import { Dynamic2Module } from './dynamic2/dynamic2.module';
 import { Dynamic3Module } from './dynamic3/dynamic3.module';
@@ -30,7 +30,7 @@ const RootRouteSettingConfig = { enableTracing: false };
 @NgModule({
   imports: [
     CommonModule,
-    BasicModule,
+    BasicRouteModule,
     DynamicModule,
     Dynamic2Module,
     Dynamic3Module,
