@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
 interface Store {
-  'id': string
+  'id': string;
   'petId': string;
   'quantity': number;
   'shipDate': Date;
@@ -19,6 +19,7 @@ interface Store {
 export class AjaxDemo2Component implements OnInit {
   addStoreId: string;
   searchStoreId: string;
+  searchStoreId2: string;
   deleteStoreId: string;
   storeBody: Store;
   constructor(
@@ -51,6 +52,12 @@ export class AjaxDemo2Component implements OnInit {
     });
   }
 
+  searchDataByPromise(): void {
+    this.Http.get(`http://petstore.swagger.io/v2/store/order/${this.searchStoreId2}`).toPromise().then(res => {
+      console.log('res: ', res);
+    });
+  }
+
   callApiWhenSendParams(): void {
     this.Http.get(`http://petstore.swagger.io/v2/store/order/2`, {
       params: new HttpParams().set('id', '3'),
@@ -58,6 +65,7 @@ export class AjaxDemo2Component implements OnInit {
       console.log('res: ', res);
     });
   }
+
   callApiWhenSendHeader(): void {
     this.Http.get(`http://petstore.swagger.io/v2/store/order/2`, {
       headers: new HttpHeaders().set('Authorization', 'my-auth-token'),
