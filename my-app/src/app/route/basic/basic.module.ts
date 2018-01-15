@@ -21,4 +21,4 @@ const routes: Routes = [
   declarations: [BasicParentComponent, BasicChild1Component, BasicChild2Component, ErrorPageComponent],
   exports: [RouterModule]
 })
-export class BasicModule { }
+export class BasicRouteModule { }
