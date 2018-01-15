@@ -42,7 +42,7 @@ import { PipeDemo2Component } from './pipe/pipe-demo-2/pipe-demo-2.component';
 
 import { AjaxDemo1Component } from './ajax/ajax-demo-1/ajax-demo-1.component';
 import { AjaxDemo2Component } from './ajax/ajax-demo-2/ajax-demo-2.component';
- 
+ import { AjaxDemo3Component } from './ajax/ajax-demo-3/ajax-demo-3.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +69,8 @@ import { AjaxDemo2Component } from './ajax/ajax-demo-2/ajax-demo-2.component';
     RanDomColorDirective,
     MovieFilterPipe,
     AjaxDemo1Component,
-    AjaxDemo2Component
+    AjaxDemo2Component,
+    AjaxDemo3Component
   ],
   imports: [
     BrowserModule,
