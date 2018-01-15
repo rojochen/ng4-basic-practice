@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Subscription } from 'rxjs/Subscription';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
 
 interface Store {
   "id": string
