@@ -81,6 +81,11 @@ import { AjaxDemo1Component } from './ajax/ajax-demo-1/ajax-demo-1.component';
       provide: HTTP_INTERCEPTORS,
       useClass: ApiInterceptorService,
       multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TimingInterceptorService,
+      multi: true,
     }
   ],
   bootstrap: [AppComponent]

@@ -17,7 +17,7 @@ export class TimingInterceptorService implements HttpInterceptor {
       // 判斷 e 是否跟 HttpResponse 相同
       if (e instanceof HttpResponse) {
         const elapsed = Date.now() - started;
-        console.error(`Request for ${req.urlWithParams} took ${elapsed} ms.`);
+        console.log(`Request for ${req.urlWithParams} took ${elapsed} ms.`);
       }
     });
   }
