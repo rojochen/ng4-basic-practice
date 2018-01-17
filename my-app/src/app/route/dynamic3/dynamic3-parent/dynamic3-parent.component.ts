@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-dynamic3-parent',
   templateUrl: './dynamic3-parent.component.html',
@@ -10,7 +11,8 @@ export class Dynamic3ParentComponent implements OnInit, OnDestroy {
   sub: any;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -22,6 +24,9 @@ export class Dynamic3ParentComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.sub.unsubscribe();
 
+  }
+  goBack() {
+    this.location.back();
   }
 
 }

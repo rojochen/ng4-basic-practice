@@ -1,6 +1,9 @@
-<p>
-  dynamic2-parent works!
-</p>
-<ul>
-  <li *ngFor="let mem of memberList; trackBy: trackByIndex;let i = index" (click)="jumpToMemberInfoPage(mem.id)">{{mem.name}}</li>
-</ul>
+<nav>
+  <a routerLinkActive="active-link" routerLink="/basic/parent">go to Basic home!</a>
+</nav>
+<div>
+  <p>點擊下方使用者名稱就可以觀看該使用者資訊</p>
+  <ng-container *ngFor="let mem of memberList; trackBy: trackByIndex;let i = index">
+    <div class="user" (click)="jumpToMemberInfoPage(mem.id)">{{mem.name}}</div>
+  </ng-container>
+</div>

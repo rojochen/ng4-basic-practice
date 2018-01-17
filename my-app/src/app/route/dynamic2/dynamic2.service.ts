@@ -9,6 +9,15 @@ export class Dynamic2Service {
   }, {
     id: '2',
     name: 'Max'
+  }, {
+    id: '3',
+    name: 'Louis'
+  }, {
+    id: '4',
+    name: 'Penny'
+  }, {
+    id: '5',
+    name: 'Deep'
   }];
   constructor() { }
   getMemberList() {

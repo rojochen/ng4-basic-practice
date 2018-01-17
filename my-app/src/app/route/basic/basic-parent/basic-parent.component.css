@@ -1,0 +1,17 @@
+
+a{
+    display: inline;
+    background-color: #99FF99;
+    padding: 15px;
+    border-radius: 15px;
+    color:#A0522D;
+    text-decoration: none;
+}
+nav {
+    text-align: center;
+}
+div {
+    display: block;
+    margin-top:20px;
+    text-align: center;
+}

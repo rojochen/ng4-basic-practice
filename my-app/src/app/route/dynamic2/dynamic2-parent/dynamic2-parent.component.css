@@ -1,0 +1,22 @@
+a{
+    display: inline;
+    background-color: #99FF99;
+    padding: 15px;
+    border-radius: 15px;
+    color:#A0522D;
+    text-decoration: none;
+}
+nav {
+    text-align: center;
+}
+div {
+   width: 80%;
+   margin: auto;
+}
+.user {
+    display: inline-block;
+    border: 1px solid;
+    padding: 2px;
+    width: 100px;
+    text-align: center;
+}
